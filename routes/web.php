@@ -14,14 +14,31 @@
 Route::get('/', function () {
 	return redirect('/myproducts');
 });
+Route::get('/home',function(){
+	return redirect('/myproducts');
+});
+
+Route::get('/myproducts','ProductsController@index')->name('listProducts')->middleware('auth');
+Route::get('/viewproduct/{id}','ProductsController@show')->name('viewProducts')->middleware('auth');
+Route::get('/newproduct','ProductsController@create')->name('newProductDialog')->middleware('auth');
+Route::get('/newproduct/{id}','ProductsController@newProject')->name('newProduct')->middleware('auth');
+Route::post('/validatenewproduct','ProductsController@validateNewProduct')->name('validateNewProduct')->middleware('auth');
+Route::post('/myproducts','ProductsController@applyFilters')->name('applyFilters')->middleware('auth');
+Route::post('/savenote','NotesController@store')->name('saveNote')->middleware('auth');
+Route::post('/updateAbout','ProductsController@updateAbout')->name('updateAbout')->middleware('auth');
+Route::post('/updateProductsPreferences','ProductsController@updateProductPreferences')->name('updateProductPreferences')->middleware('auth');
+Route::get('/orderBy/{order}','ProductsController@orderByProducts')->name('orderProducts')->middleware('auth');
 
 
-Route::get('/myproducts','ProductsController@index')->name('listProducts');
-Route::get('/viewproduct/{id}','ProductsController@show')->name('viewProducts');
-Route::get('/newproduct','ProductsController@create')->name('newProductDialog');
-Route::get('/newproduct/{id}','ProductsController@newProject')->name('newProduct');
-Route::post('/myproducts','ProductsController@applyFilters')->name('applyFilters');
-Route::post('/savenote','NotesController@store')->name('saveNote');
+
+
+
+
+
+
+
+
+
 
 Route::get('/dashboard/v1', 'MainController@dashboardV1')->name('dashboard-v1');
 Route::get('/dashboard/v2', 'MainController@dashboardV2')->name('dashboard-v2');
@@ -130,3 +147,7 @@ Route::get('/login/v3', 'MainController@loginV3')->name('login-v3');
 Route::get('/register/v3', 'MainController@registerV3')->name('register-v3');
 
 Route::get('/helper/css', 'MainController@helperCSS')->name('helper-css');
+
+Auth::routes();
+Route::get('login/v1', 'MainController@loginV1')->name('home');
+

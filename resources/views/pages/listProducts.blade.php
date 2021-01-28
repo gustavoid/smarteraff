@@ -30,8 +30,8 @@
 							<b class="caret"></b>
 						</a>
 						<div class="dropdown-menu dropdown-menu-right" style="">
-							<a href="javascript:;" class="dropdown-item">A-Z</a>
-							<a href="javascript:;" class="dropdown-item">Z-A</a>
+							<a href="{{ route('orderProducts',1) }}" class="dropdown-item">A-Z</a>
+							<a href="{{ route('orderProducts',2) }}" class="dropdown-item">Z-A</a>
 							<div class="dropdown-divider"></div>
 							<a href="javascript:;" class="dropdown-item">Mais novo</a>
 							<a href="javascript:;" class="dropdown-item">Mais antigo</a>

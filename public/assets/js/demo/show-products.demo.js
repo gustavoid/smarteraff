@@ -142,6 +142,23 @@ function hideNewNote(){
 	$("#cancelarNota").hide();
 }
 
+function displayEditAbout(){
+	$("#about").hide();
+	$("#btnAbout").hide();
+	$("#editAbout").val($("#about").text());
+	$("#editAbout").show();
+	$("#salvarAbout").show();
+	$("#cancelarAbout").show();
+}
+
+function hideEditAbout(){
+	$("#btnAbout").show();
+	$("#about").show();
+	$("#editAbout").hide();
+	$("#salvarAbout").hide();
+	$("#cancelarAbout").hide();
+}
+
 var showProducts = function () {
 	"use strict";
 	return {

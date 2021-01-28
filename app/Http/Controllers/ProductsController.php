@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
-
+use App\Network;
+use Carbon\Carbon;
 class ProductsController extends Controller
 {
     /**
@@ -242,6 +243,130 @@ class ProductsController extends Controller
         //
     }
 
+    public function updateProductPreferences(Request $request){
+        $dataForm = $request->all();
+        $id       = $dataForm['idProduto'];
+        $product  = Product::where('id','=',$id)->first();
+        // dd($dataForm);
+        
+        if($dataForm['recorrente']){
+           $product->recorrente = floatval($dataForm['recorrente']); 
+        }
+        else{
+            $product->recorrente = 0.0;
+        }
+        if($dataForm['start']){
+            $product->startDate = (new Carbon($dataForm['start']))->format('Y-m-d');  
+            $product->endDate   = (new Carbon($dataForm['end']))->format('Y-m-d'); 
+        }
+            
+
+        if(isset($dataForm['nomeUnico'])){
+            $product->uniqueName = true;
+        }else{
+            $product->uniqueName = false;
+        }
+
+        if(isset($dataForm['favorito'])){
+            $product->favorites = true;
+        }else{
+            $product->favorites = false;
+        }
+
+        if(!strcmp($dataForm['statusAfiliacao'],'Status da afialiação')){
+            $product->status_aprovacao = null;
+        }
+        else{
+            $product->status_aprovacao = $dataForm['statusAfiliacao'];
+        }
+        if(isset($dataForm['midiaPatrocinada'])){
+            $product->midiaPatrocinada = true;
+        }else{
+            $product->midiaPatrocinada = false;
+        }
+        if(isset($dataForm['adsSwitch'])){
+            $product->ativeAds = true;
+        }else{
+            $product->ativeAds = false;
+        }
+        if(isset($dataForm['recorrenteSwitch'])){
+            $product->recurring = true;
+        }else{
+            $product->recurring = false;
+        }
+        if(isset($dataForm['lancamentoSwitch'])){
+            $product->lancamento = true;
+        }else{
+            $product->lancamento = false;
+        }
+        if(isset($dataForm['trial'])){
+            $product->trial = true;
+        }else{
+            $product->trial = false;
+        }
+        if(isset($dataForm['upsell'])){
+            $product->upsell = true;
+        }else{
+            $product->upsell = false;
+        }
+
+        if(isset($dataForm['toolsPage'])){
+            $product->affiliateToolsPage = true;
+        }else{
+            $product->affiliateToolsPage = false;
+        }
+        
+        if(isset($dataForm['mobileTrafic'])){
+            $product->mobileTrafic = true;
+        }else{
+            $product->mobileTrafic = false;
+        }
+        $product->save();
+        return redirect(route('viewProducts',$id));
+
+    }
+    public function validateNewProduct(Request $request){
+        $dataForm = $request->all();
+        $id       = $dataForm['idProduto'];
+        $network  = $dataForm['network'];
+        $product  = Product::where('idWebsite','=',$id)->first();
+        if(!$product){
+            $product = new Product();
+            $product->idWebsite = $id;
+            $product->save();
+            $netw = new Network();
+            $netw->origin = 'Hotmart';
+            $netw->product_id = $product->id;
+            $netw->save();        
+        } 
+        return view('pages/newProduct',compact('product',$product));
+    }
+
+    public function updateAbout(Request $request){
+        $dataForm = $request->all();
+        $id       = $dataForm['idProdutoEdit'];
+        $text     = $dataForm['editAbout'];
+        $product  = Product::where('id','=',$id)->first();
+        $product->about = base64_encode($text);
+        $product->save();
+        return view('pages/showProduct',compact("product",$product));
+    }
+
+    public function orderByProducts($order){
+        if($order == 1){
+            $queryProducts = Product::query();
+            $queryProducts->orderBy("title","ASC");
+            $products = $queryProducts->paginate(20);
+            return view('pages/listProducts',compact('products',$products));
+        }else if ($order == 2){
+            $queryProducts = Product::query();
+            $queryProducts->orderBy("title","DESC");
+            $products = $queryProducts->paginate(20);
+            return view('pages/listProducts',compact('products',$products));
+        }
+    }
+
+    
     /**
      * Update the specified resource in storage.
      *

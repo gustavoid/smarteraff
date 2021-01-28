@@ -46,6 +46,7 @@ var handleJqueryTagIt = function() {
 	});
 };
 
+
 var newProduct = function () {
 	"use strict";
 	return {

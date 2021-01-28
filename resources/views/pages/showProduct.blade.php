@@ -96,6 +96,7 @@
 	    			            	</div>
 	    			            </div>
                                 <br>
+
                                 <div class="row">
                                     <div class="col">
                                         <h5 style="color: #7b8084;">Venda R${{ $product->maxPrice }}</h5>
@@ -118,119 +119,224 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="custom-control custom-checkbox">
-	    				                	<input type="checkbox" class="custom-control-input" name="nomeUnico" id="nomeUnico" value="1"  />
-	    				                	<label class="custom-control-label" for="nomeUnico">Nome Único</label>
-	    				                </div>
+                                <form action="{{ route('updateProductPreferences') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="idProduto" value="{{ $product->id }}">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="custom-control custom-checkbox">
+                                                @if($product->uniqueName)
+                                                    <input type="checkbox" class="custom-control-input" name="nomeUnico" id="nomeUnico" value="1" checked/>
+                                                @else
+                                                    <input type="checkbox" class="custom-control-input" name="nomeUnico" id="nomeUnico" value="1" />
+                                                @endif
+	    				                    	<label class="custom-control-label" for="nomeUnico">Nome Único</label>
+	    				                    </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="custom-control custom-checkbox">
-	    				                	<input type="checkbox" class="custom-control-input" name="favorito" id="favorito" value="1"  />
-	    				                	<label class="custom-control-label" for="favorito">Favorito</label>
-	    				                </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="custom-control custom-checkbox">
+                                                @if($product->favorites)
+	    				                    	    <input type="checkbox" class="custom-control-input" name="favorito" id="favorito" value="1"  checked/>
+                                                @else
+                                                    <input type="checkbox" class="custom-control-input" name="favorito" id="favorito" value="1"  />
+                                                @endif
+	    				                    	<label class="custom-control-label" for="favorito">Favorito</label>
+	    				                    </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <br>
-                                <br>
-                                <div class="row">
-                                    <div class="col">
-                                        <select class="form-control" name="statusAfiliacao" id="statusAfiliacao">
-	    				                	<option>Status da afialiação</option>
-	    				                	<option>Clickbank</option>
-	    				                </select>
+                                    <br>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col">
+                                            @switch($product->status_afiliacao)
+                                                @case('Aprovação 1 clique')
+                                                    <select class="form-control" name="statusAfiliacao" id="statusAfiliacao" >
+                                                        <option>Aprovação 1 clique</option>
+                                                        <option>Requer aprovação</option>
+                                                        <option>Aguardando aprovação</option>
+                                                        <option>Aprovado</option>
+                                                        <option>Status da afialiação</option>
+	    				                            </select>
+                                                    @break
+                                                @case('Requer aprovação')
+                                                    <select class="form-control" name="statusAfiliacao" id="statusAfiliacao" >
+                                                        <option>Requer aprovação</option>
+                                                        <option>Aprovação 1 clique</option>
+                                                        <option>Aguardando aprovação</option>
+                                                        <option>Aprovado</option>
+                                                        <option>Status da afialiação</option>
+	    				                            </select>
+                                                    @break
+                                                @case('Aguardando aprovação')
+                                                    <select class="form-control" name="statusAfiliacao" id="statusAfiliacao" >
+                                                        <option>Aguardando aprovação</option>
+                                                        <option>Requer aprovação</option>
+                                                        <option>Aprovação 1 clique</option>
+                                                        <option>Aprovado</option>
+                                                        <option>Status da afialiação</option>
+	    				                            </select>
+                                                    @break
+                                                @case('Aprovado')
+                                                    <select class="form-control" name="statusAfiliacao" id="statusAfiliacao" >
+                                                        <option>Aprovado</option>
+                                                        <option>Aguardando aprovação</option>
+                                                        <option>Requer aprovação</option>
+                                                        <option>Aprovação 1 clique</option>
+                                                        <option>Status da afialiação</option>
+	    				                            </select>
+                                                    @break
+                                                @default
+                                                    <select class="form-control" name="statusAfiliacao" id="statusAfiliacao" >
+	    				                            	<option>Status da afialiação</option>
+	    				                            	<option>Aprovação 1 clique</option>
+                                                        <option>Requer aprovação</option>
+                                                        <option>Aguardando aprovação</option>
+                                                        <option>Aprovado</option>
+	    				                            </select>
+                                            @endswitch
+                                        </div>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="custom-control custom-checkbox">
-	    				                	<input type="checkbox" class="custom-control-input" name="midiaPatrocinada" id="midiaPatrocinada" value="1"  />
-	    				                	<label class="custom-control-label" for="midiaPatrocinada">Não permitir mídia patrocinada</label>
-	    				                </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="custom-control custom-checkbox">
+                                                @if($product->midiaPatrocinada)
+	    				                    	    <input type="checkbox" class="custom-control-input" name="midiaPatrocinada" id="midiaPatrocinada" value="1"  checked/>
+                                                @else
+                                                    <input type="checkbox" class="custom-control-input" name="midiaPatrocinada" id="midiaPatrocinada" value="1"  />
+                                                @endif
+	    				                    	<label class="custom-control-label" for="midiaPatrocinada">Não permitir mídia patrocinada</label>
+	    				                    </div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <br>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="adsSwitch" name="adsSwitch">
-                                            <label class="custom-control-label" for="adsSwitch">Ads Ativo/Inativo</div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="custom-control custom-switch">
+                                                @if($product->ativeAds)
+                                                    <input type="checkbox" class="custom-control-input" id="adsSwitch" name="adsSwitch" checked />
+                                                @else
+                                                    <input type="checkbox" class="custom-control-input" id="adsSwitch" name="adsSwitch" />
+                                                @endif
+                                                <label class="custom-control-label" for="adsSwitch">Ads Ativo/Inativo</div>
+                                        </div>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="recorrenteSwitch" name="recorrenteSwitch">
-                                            <label class="custom-control-label" for="recorrenteSwitch">Recorrente - Recurring $/Rebil</div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="custom-control custom-switch">
+                                                @if($product->recurring)
+                                                    <input type="checkbox" class="custom-control-input" id="recorrenteSwitch" name="recorrenteSwitch" checked>
+                                                @else
+                                                    <input type="checkbox" class="custom-control-input" id="recorrenteSwitch" name="recorrenteSwitch" >
+                                                @endif
+                                                <label class="custom-control-label" for="recorrenteSwitch">Recorrente - Recurring $/Rebil</div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row" style="padding-top:5px;">
-                                    <div class="col">
-                                        <input class="form-control" type="number" name="recorrente" id="recorrente" />
+                                    <div class="row" style="padding-top:5px;">
+                                        <div class="col">
+                                            @if($product->recorrente)
+                                                <input class="form-control" type="number" name="recorrente" id="recorrente" value="{{ $product->recorrente }}"/>
+                                            @else
+                                                <input class="form-control" type="number" name="recorrente" id="recorrente"/>
+                                            @endif
+                                        </div>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="lancamentoSwitch" name="lancamentoSwitch">
-                                            <label class="custom-control-label" for="lancamentoSwitch">Lançamento</div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="custom-control custom-switch">
+                                                @if($product->lancamento)
+                                                    <input type="checkbox" class="custom-control-input" id="lancamentoSwitch" name="lancamentoSwitch" checked>
+                                                @else
+                                                    <input type="checkbox" class="custom-control-input" id="lancamentoSwitch" name="lancamentoSwitch">
+                                                @endif
+                                                <label class="custom-control-label" for="lancamentoSwitch">Lançamento</div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row" style="padding-top:5px;">
-                                    <div class="col">
-	    						        <div class="input-group input-daterange">
-	    						        	<input type="text" class="form-control" name="start" id="start" placeholder="Inicio" />
-	    						        	<span class="input-group-addon">to</span>
-	    						        	<input type="text" class="form-control" name="end" id="end" placeholder="Final" />
-	    						        </div>
+                                    <div class="row" style="padding-top:5px;">
+                                        <div class="col">
+	    						            <div class="input-group input-daterange">
+                                                @if($product->startDate)
+	    						            	    <input type="text" class="form-control" name="start" id="start" placeholder="Inicio" value="{{ $product->startDate }}"/>
+                                                @else
+                                                    <input type="text" class="form-control" name="start" id="start" placeholder="Inicio" />
+                                                @endif
+	    						            	<span class="input-group-addon">to</span>
+                                                @if($product->endDate)
+    	    						            	<input type="text" class="form-control" name="end" id="end" placeholder="Final" value="{{ $product->endDate }}"/>
+                                                @else
+                                                    <input type="text" class="form-control" name="end" id="end" placeholder="Final"/>
+                                                @endif
+	    						            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <br>
-                                <br>
+                                    <br>
+                                    <br>
 
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="custom-control custom-checkbox">
-	    				                	<input type="checkbox" class="custom-control-input" name="trial" id="trial" value="1"  />
-	    				                	<label class="custom-control-label" for="trial">U$ 1 Trial</label>
-	    				                </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="custom-control custom-checkbox">
+                                                @if($product->trial)
+	    				                    	    <input type="checkbox" class="custom-control-input" name="trial" id="trial" value="1"  checked/>
+                                                @else
+                                                    <input type="checkbox" class="custom-control-input" name="trial" id="trial" value="1"  />
+                                                @endif
+	    				                    	<label class="custom-control-label" for="trial">U$ 1 Trial</label>
+	    				                    </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="custom-control custom-checkbox">
-	    				                	<input type="checkbox" class="custom-control-input" name="upsell" id="upsell" value="1"  />
-	    				                	<label class="custom-control-label" for="upsell">Permitir Upsell</label>
-	    				                </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="custom-control custom-checkbox">
+                                                @if($product->upsell)
+	    				                    	    <input type="checkbox" class="custom-control-input" name="upsell" id="upsell" value="1"  checked/>
+                                                @else
+                                                    <input type="checkbox" class="custom-control-input" name="upsell" id="upsell" value="1"  />
+                                                @endif
+	    				                    	<label class="custom-control-label" for="upsell">Permitir Upsell</label>
+	    				                    </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="custom-control custom-checkbox">
-	    				                	<input type="checkbox" class="custom-control-input" name="toolsPage" id="toolsPage" value="1"  />
-	    				                	<label class="custom-control-label" for="toolsPage">Must have affiliate tools page</label>
-	    				                </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="custom-control custom-checkbox">
+                                                @if($product->affiliateToolsPage)
+	    				                    	    <input type="checkbox" class="custom-control-input" name="toolsPage" id="toolsPage" value="1"  checked/>
+                                                @else   
+                                                    <input type="checkbox" class="custom-control-input" name="toolsPage" id="toolsPage" value="1" />
+                                                @endif
+	    				                    	<label class="custom-control-label" for="toolsPage">Must have affiliate tools page</label>
+	    				                    </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="custom-control custom-checkbox">
-	    				                	<input type="checkbox" class="custom-control-input" name="mobileTrafic" id="mobileTrafic" value="1"  />
-	    				                	<label class="custom-control-label" for="mobileTrafic">Support for mobile trafic</label>
-	    				                </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="custom-control custom-checkbox">
+                                                @if($product->mobileTrafic)
+	    				                    	    <input type="checkbox" class="custom-control-input" name="mobileTrafic" id="mobileTrafic" value="1"  checked/>
+                                                @else
+                                                    <input type="checkbox" class="custom-control-input" name="mobileTrafic" id="mobileTrafic" value="1"/>
+                                                @endif
+	    				                    	<label class="custom-control-label" for="mobileTrafic">Support for mobile trafic</label>
+	    				                    </div>
+                                        </div>
                                     </div>
-                                </div>
+                                    <br>
+
+                                    <div class="row">
+                                        <div class="col">
+                                            <center><button type="submit" class="btn btn-primary btn-lg">Salvar alterações</button></center>
+                                        </div>
+                                    </div>
+                                </form>
                                 <br>
                                 <br>
 
@@ -242,19 +348,31 @@
                                 <br>
                                 <div class="row">
                                     <div class="col">
-                                        <i class="far fa-envelope fa-lg"></i> joedoe@email.com
+                                        @if($product->emailProdutor)
+                                            <i class="far fa-envelope fa-lg"></i> {{ $product->emailProdutor }}
+                                        @else
+                                            <i class="far fa-envelope fa-lg"></i> --
+                                        @endif
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row">
                                     <div class="col">
-                                        <i class="far fa-user fa-lg"></i> Joe Doe
+                                        @if($product->nomeProdutor)
+                                            <i class="far fa-user fa-lg"></i> {{ $product->nomeProdutor }}
+                                        @else
+                                            <i class="far fa-user fa-lg"></i> --
+                                        @endif
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row">
                                     <div class="col">
-                                        <i class="fab fa-whatsapp fa-lg"></i> 3199823711
+                                        @if($product->telProdutor)
+                                            <i class="fab fa-whatsapp fa-lg"></i> {{ $product->telProdutor }}
+                                        @else
+                                            <i class="fab fa-whatsapp fa-lg"></i> --
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -328,9 +446,22 @@
                                 </div>
                                 <div class="panel" style="background-color:#dee2e6;">
 	    		                	<div class="panel-body">
-	    		                		<p>
+                                    <span class="close" id="btnAbout" name="btnAbout"><i class="fas fa-edit" onclick="displayEditAbout();"></i></span>
+	    		                		<p name="about" id="about">
 	    		                		{{ base64_decode($product->about) }}
 	    		                		</p>
+                                        <form action="{{ route('updateAbout') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="idProdutoEdit" value="{{ $product->id }}">
+                                        <textarea class="form-control form-control-lg" name="editAbout" id="editAbout" rows="5" style="display:none"></textarea>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col text-right">
+                                                <button class="btn btn-primary" id="salvarAbout" name="salvarAbout" type="submit" style="display:none">Salvar</button>
+                                                <a href="#" class="btn btn-default" id="cancelarAbout" name="cancelarAbout" style="display:none" onclick="hideEditAbout();">Cancelar</a>
+                                            </div>
+                                        </div>
+                                    </form>
 	    		                	</div>
 	    		                </div>
                                 <br>
@@ -364,7 +495,7 @@
                                 @endforeach
                                 <div class="row">
                                 <div class="col">
-                                    <center><button type="button" class="btn btn-primary btn-lg">Salvar alterações</button></center>
+                                    <!-- <center><button type="button" class="btn btn-primary btn-lg">Salvar alterações</button></center> -->
                                 </div>
                             </div>
                             </div>

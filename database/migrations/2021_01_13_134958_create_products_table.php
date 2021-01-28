@@ -33,8 +33,24 @@ class CreateProductsTable extends Migration
             $table->string('subject')->nullable();
             $table->float('percentage')->nullable();
             $table->dateTime('creation_date')->nullable();
-            $table->string('favorites')->nullable();
+            $table->boolean('favorites')->default(false);
             $table->string('type')->nullable();
+            $table->string('status_aprovacao')->nullable();
+            $table->boolean('uniqueName')->default(false);
+            $table->boolean('midiaPatrocinada')->default(false);
+            $table->boolean('ativeAds')->default(false);
+            $table->boolean('recurring')->default(false);
+            $table->integer('recorrente')->default(0.0);
+            $table->boolean('lancamento')->default(false);
+            $table->dateTime('startDate')->nullable();
+            $table->dateTime('endDate')->nullable();
+            $table->boolean('trial')->default(false);
+            $table->boolean('upsell')->default(false);
+            $table->boolean('affiliateToolsPage')->default(false);
+            $table->boolean('mobileTrafic')->default(false);
+            $table->string('emailProdutor')->nullable();
+            $table->string('nomeProdutor')->nullable();
+            $table->string('telProdutor')->nullable();
             $table->timestamps();
         });
     }

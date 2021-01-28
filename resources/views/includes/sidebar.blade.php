@@ -9,7 +9,7 @@
 		<!-- begin sidebar user -->
 		<ul class="nav" style="padding-top:30px;">
 			<center>
-				<button type="button" class="btn btn-default">Novo Produto</button>
+				<a href="{{ route('newProductDialog') }}" class="btn btn-default">Novo Produto</a>
 			</center>
 		</ul>
 		<!-- end sidebar user -->

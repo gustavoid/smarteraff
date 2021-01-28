@@ -15,7 +15,9 @@
 							<h5 class="card-title text-left">Network</h5>
 							<div class="row">
                                 <div class="col-md-7">
-                                    <select class="form-control" name="statusAfiliacao" id="statusAfiliacao">
+                                    <form action="{{ route('validateNewProduct') }}" method="POST">
+                                    @csrf
+                                    <select class="form-control" name="network" id="network">
 	    				                <option>Hotmart</option>
 	    				                <option>Clickbank</option>
                                         <option>Em branco</option>
@@ -28,7 +30,7 @@
 							<div class="row">
                                 <div class="col-md-7">
                                     <div class="input-group">
-                                        <input class="form-control" type="text" name="idProduto" id="idProduto">
+                                        <input class="form-control" type="number" name="idProduto" id="idProduto">
                                         <span class="input-group-append">
                                             <button type="button" class="btn btn-default"><i class="fas fa-arrow-circle-down"></i></button>
                                         </span>
@@ -41,9 +43,10 @@
                                 <div class="row">
                                     <div class="col text-right">
                                         <a href="javascript:;" class="btn btn-sm btn-default">Cancelar</a>
-							            <a href="javascript:;" class="btn btn-sm btn-success">Salvar</a>
+							            <button type="submit" class="btn btn-sm btn-success">Salvar</button>
                                     </div>
                                 </div>
+                            </form>
 						</div>
 					</div>
 				</div>

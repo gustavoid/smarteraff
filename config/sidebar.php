@@ -18,7 +18,7 @@ return [
 		'icon' => 'fab fa-simplybuilt',
 		'title' => 'Meus Produtos',
 		'badge' => '10',
-		'url' => '/products',
+		'url' => '/myproducts',
 		'route-name' => 'myproducts'
 	],[
 		'icon' => 'fa fa-list-ol',
