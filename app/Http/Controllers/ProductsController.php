@@ -21,7 +21,9 @@ class ProductsController extends Controller
     public function index(Request $request)
     {
         $products = Product::paginate(20);
-        return view('pages/listProducts',compact('products',$products));
+        $count    = Product::count();
+        $data = ["count" => $count,"products" =>$products];
+        return view('pages/listProducts',$data);
     }
 
     public function applyFilters(Request $request)
@@ -38,7 +40,8 @@ class ProductsController extends Controller
         $minValue        = floatval($comissionValues[0]);
         $maxValue        = floatval($comissionValues[1]);
         $queryProducts->whereBetween('percentage',[$minValue,$maxValue]);
-
+        $count    = Product::count();
+        
         // Tipo de cookies
         if(isset($dataForm['primeiroclick'])){
             $queryProducts->where('cookie_type','=','primeiro clique');
@@ -199,7 +202,8 @@ class ProductsController extends Controller
 
         $products = $queryProducts->paginate(20);
         // dd($products);
-        return view('pages/listProducts',compact('products',$products));
+        $data = ["count" => $count,"products" =>$products];
+        return view('pages/listProducts',$data);
     }
     /**
      * Show the form for creating a new resource.
@@ -483,7 +487,6 @@ class ProductsController extends Controller
         }else{
             return redirect(route('newProductDialog')."?erro=1");
         }
-        // return view('pages/newProduct',compact('product',$product));
         
     }
 

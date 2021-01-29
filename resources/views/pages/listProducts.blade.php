@@ -42,7 +42,7 @@
 			</div>
 		</div>
 		<div class="panel-body">
-			13612 produtos
+			{{ $count }} produtos
 			<!-- <div class="col-lg-8">
 				<input type="text" id="customRange_rangeSlider" name="customRange_rangeSlider" value="" />
 			</div> -->
