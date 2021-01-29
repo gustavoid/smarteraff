@@ -23,7 +23,7 @@ Route::get('/viewproduct/{id}','ProductsController@show')->name('viewProducts')-
 Route::get('/editproduct/{id}','ProductsController@edit')->name('editProduct')->middleware('auth');
 Route::post('updateproduct/{id}','ProductsController@update')->name('updateProduct')->middleware('auth');
 Route::get('/deleteproduct/{id}','ProductsController@destroy')->name('deleteProduct')->middleware('auth');
-Route::get('/newproduct','ProductsController@create')->name('newProductDialog')->middleware('auth');
+Route::get('/newproduct/{erro?}','ProductsController@create')->name('newProductDialog')->middleware('auth');
 Route::get('/newproduct/{id}','ProductsController@newProject')->name('newProduct')->middleware('auth');
 Route::post('/validatenewproduct','ProductsController@validateNewProduct')->name('validateNewProduct')->middleware('auth');
 Route::post('/myproducts','ProductsController@applyFilters')->name('applyFilters')->middleware('auth');

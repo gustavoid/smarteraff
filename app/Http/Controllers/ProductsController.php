@@ -479,9 +479,12 @@ class ProductsController extends Controller
             $netw->origin = 'Hotmart';
             $netw->product_id = $product->id;
             $netw->save();        
-        } 
+            return redirect(route('newProduct',$id))->with(compact('product',$product ));
+        }else{
+            return redirect(route('newProductDialog')."?erro=1");
+        }
         // return view('pages/newProduct',compact('product',$product));
-        return redirect(route('newProduct',$id))->with(compact('product',$product ));
+        
     }
 
     public function updateAbout(Request $request){

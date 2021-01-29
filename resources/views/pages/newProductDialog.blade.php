@@ -36,6 +36,20 @@
                                         </span>
                                     </div>
                                 </div>
+                                @if(app('request')->input('erro'))
+                                    <div class="row">
+                                        <div class="col">
+                                        <br>
+                                        <br>
+                                            <div class="alert alert-danger fade show">
+                                              <span class="close" data-dismiss="alert">×</span>
+                                              <strong>Erro!</strong>
+                                              O produto informado já existe na base de dados!
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                                
                             </div>
                             <br>
                             <br>
