@@ -680,75 +680,53 @@ class ProductsController extends Controller
 
         
         $c = Product::where('subject','=','imais e Planta')->count();
-        dd($c);
-        if(isset($dataForm['casa_construcao'])){
-            $queryProducts->where('subject','=','Casa e Construçã');
-        }
-        if(isset($dataForm['culinaria'])){
-            $queryProducts->where('subject','=','Culinária e Gastronomia');
-        }
-        if(isset($dataForm['desenvolvimento_pessoal'])){
-            $queryProducts->where('subject','=','Desenvolvimento Pessoal');
-        }
-        if(isset($dataForm['design'])){
-            $queryProducts->where('subject','=','Desig');
-        }
-        if(isset($dataForm['direito'])){
-            $queryProducts->where('subject','=','Direito');
-        }
-        if(isset($dataForm['ecologia'])){
-            $queryProducts->where('subject','=','Ecologia e Meio Ambiente');
-        }
-        if(isset($dataForm['educacional'])){
-            $queryProducts->where('subject','=','Educacional');
-        }
-        if(isset($dataForm['empreendedorismo_digital'])){
-            $queryProducts->where('subject','=','Empreendedorismo Digital');
-        }
-        if(isset($dataForm['entreterimento'])){
-            $queryProducts->where('subject','=','Entretenime');
-        }
-        if(isset($dataForm['espiritualidade'])){
-            $queryProducts->where('subject','=','Espiritualidade');
-        }
-        if(isset($dataForm['financas'])){
-            $queryProducts->where('subject','=','Finanças e Investime');
-        }
-        if(isset($dataForm['hobbies'])){
-            $queryProducts->where('subject','=','Hobbie');
-        }
-        if(isset($dataForm['idioma'])){
-            $queryProducts->where('subject','=','Idioma');
-        }
-        if(isset($dataForm['internet'])){
-            $queryProducts->where('subject','=','Interne');
-        }
-        if(isset($dataForm['literatura'])){
-            $queryProducts->where('subject','=','Literatura');
-        }
-        if(isset($dataForm['moda'])){
-            $queryProducts->where('subject','=','Moda e Beleza');
-        }
-        if(isset($dataForm['tecnologia'])){
-            $queryProducts->where('subject','=','Tecnologia da Informaçã');
-        }
-        if(isset($dataForm['sexualidade'])){
-            $queryProducts->where('subject','=','Sexualidade');
-        }
-        if(isset($dataForm['saude'])){
-            $queryProducts->where('subject','=','Saúde e Esporte');
-        }
-        if(isset($dataForm['outros'])){
-            $queryProducts->where('subject','=','Outr');
-        }
-        if(isset($dataForm['apps'])){
-            $queryProducts->where('subject','=','pps & Software');
-        }
-        if(isset($dataForm['negocios'])){
-            $queryProducts->where('subject','=','Negócios e Carreira');
-        }
-        if(isset($dataForm['musica'])){
-            $queryProducts->where('subject','=','Música e Arte');
-        }
-    }
-}
+        echo "Categoria: Animais e plantas| Excel: 1943| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Casa e Construçã')->count();
+        echo "Categoria: Casa e Contrução| Excel: 1927| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Culinária e Gastronomia')->count();
+        echo "Categoria: Culinária e Gastronomia| Excel: 7104| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Desenvolvimento Pessoal')->count();
+        echo "Categoria: Desenvolvimento Pessoal| Excel: 17812| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Desig')->count();
+        echo "Categoria: Design| Excel: 3185| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Direito')->count();
+        echo "Categoria: Direito| Excel: 2673| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Ecologia e Meio Ambiente')->count();
+        echo "Categoria: Ecologia e Meio Ambiente| Excel: 642| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Educacional')->count();
+        echo "Categoria: Educacional| Excel: 21533| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Empreendedorismo Digital')->count();
+        echo "Categoria: Empreendedorismo Digital| Excel: 3607| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Entretenime')->count();
+        echo "Categoria: Entretenimento| Excel: 1541| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Espiritualidade')->count();
+        echo "Categoria: Espiritualidade| Excel: 4704| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Finanças e Investime')->count();
+        echo "Categoria: Finanças e Investimentos| Excel: 9321| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Hobbie')->count();
+        echo "Categoria: Hobbie| Excel: 1269| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Idioma')->count();
+        echo "Categoria: Idioma| Excel: 1778| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Interne')->count();
+        echo "Categoria: Internet| Excel: 4156| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Literatura')->count();
+        echo "Categoria: Literatura| Excel: 2118| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Moda e Beleza')->count();
+        echo "Categoria: Moda e Beleza| Excel: 5327| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Tecnologia da Informaçã')->count();
+        echo "Categoria: Tecnologia da Informação| Excel: 2210| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Sexualidade')->count();
+        echo "Categoria: Sexualidade| Excel: 631| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Saúde e Esporte')->count();
+        echo "Categoria: Saúde e Esporte| Excel: 13964| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Outr')->count();
+        echo "Categoria: Outros| Excel: 3784| Extraidos: $c<br>";
+        $c = Product::where('subject','=','pps & Software')->count();
+        echo "Categoria: Apps & Software| Excel: 2787| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Negócios e Carreira')->count();
+        echo "Categoria: Negócios e Carreira| Excel: 16652| Extraidos: $c<br>";
+        $c = Product::where('subject','=','Música e Arte')->count();
+        echo "Categoria: Música e Arte| Excel: 6129| Extraidos: $c<br>";
+
+     }
+ }
