@@ -20,6 +20,9 @@ Route::get('/home',function(){
 
 Route::get('/myproducts','ProductsController@index')->name('listProducts')->middleware('auth');
 Route::get('/viewproduct/{id}','ProductsController@show')->name('viewProducts')->middleware('auth');
+Route::get('/editproduct/{id}','ProductsController@edit')->name('editProduct')->middleware('auth');
+Route::post('updateproduct/{id}','ProductsController@update')->name('updateProduct')->middleware('auth');
+Route::get('/deleteproduct/{id}','ProductsController@destroy')->name('deleteProduct')->middleware('auth');
 Route::get('/newproduct','ProductsController@create')->name('newProductDialog')->middleware('auth');
 Route::get('/newproduct/{id}','ProductsController@newProject')->name('newProduct')->middleware('auth');
 Route::post('/validatenewproduct','ProductsController@validateNewProduct')->name('validateNewProduct')->middleware('auth');
@@ -28,10 +31,7 @@ Route::post('/savenote','NotesController@store')->name('saveNote')->middleware('
 Route::post('/updateAbout','ProductsController@updateAbout')->name('updateAbout')->middleware('auth');
 Route::post('/updateProductsPreferences','ProductsController@updateProductPreferences')->name('updateProductPreferences')->middleware('auth');
 Route::get('/orderBy/{order}','ProductsController@orderByProducts')->name('orderProducts')->middleware('auth');
-
-
-
-
+Route::get('/countproductsbysubject','ProductsController@countProducts')->name('countProducts');
 
 
 

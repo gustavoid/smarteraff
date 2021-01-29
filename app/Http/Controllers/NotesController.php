@@ -46,7 +46,7 @@ class NotesController extends Controller
         }
         // verifica o tamanho da nota
         // salva a nota
-        return view('pages/showProduct',compact("product",$product));
+        return redirect(route('viewProducts',$form['idProduto']));
     }
 
     /**

@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Network;
 use Carbon\Carbon;
+use App\Temperature;
+use App\Keywords;
+use App\Ads;
+use App\Notes;
+
 class ProductsController extends Controller
 {
     /**
@@ -217,7 +222,141 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dataForm   = $request->all();
+        $newProduct = new Product();
+        if(empty($dataForm['valorComissao'])){
+            $newProduct->maxPrice = 0.0;
+        }else{
+            $newProduct->maxPrice = float($dataForm['valorComissao']);
+        }
+    
+        if(isset($dataForm['recorrenteSwitch'])){
+            $newProduct->recurring = true;
+        }else{
+            $newProduct->recurring = false;
+        }
+        if(empty($dataForm['recorrente'])){
+            $newProduct->recorrente = 0.0;
+        }else{
+            $newProduct->recorrente = float($dataForm['recorrente']);
+        }
+        if(!strcmp($dataForm['categoria'],'Categorias')){
+            $newProduct->subject = null;
+        }else{
+            $newProduct->subject = $dataForm['categoria'];
+        }
+        if (empty($dataForm['format'])){
+            $newProduct->format = null;
+        }else{
+            $newProduct->format = $dataForm['format'];
+        }
+        if(!strcmp($dataForm['tipoComissao'],'Tipo de comissão')){
+            $newProduct->type = null;
+        }else{
+            $newProduct->type = $dataForm['tipoComissao'];
+        }if(strcmp($dataForm['statusAfiliacao'],'Status da afialiação')){
+            $newProduct->status_aprovacao = null;
+        }else{
+            $newProduct->status_aprovacao = $dataForm['statusAfiliacao'];
+        }
+        // if(empty($dataForm['pais'])){
+
+        if(empty($dataForm['idioma'])){
+            $newProduct->languge = null;
+        }else{
+            $newProduct->language = $dataForm['idioma'];
+        }
+        if(isset($dataForm['lancamentoSwitch'])){
+            $newProduct->lancamento = true;
+        }else{
+            $newProduct->lancamento = false;
+        }
+        if(!empty($dataForm['start'])){
+            $product->startDate = (new Carbon($dataForm['start']))->format('Y-m-d');  
+            $product->endDate   = (new Carbon($dataForm['end']))->format('Y-m-d'); 
+        }else{$product->startDate  = null;
+            $product->endDate      = null;
+        }
+        if(isset($dataForm['nomeUnico'])){
+            $newProduct->uniqueName = true;
+        }else{
+            $newProduct->uniqueName = false;
+        }
+        if(isset($dataForm['favorito'])){
+            $newProduct->favorites = true;
+        }else{
+            $newProduct->favorites = true;
+        }
+        if(isset($dataForm['midiaPatrocinada'])){
+            $newProduct->midiaPatrocinada = true;
+        }else{
+            $newProduct->midiaPatrocinada = false;
+        }
+        if(isset($dataForm['adsSwitch'])){
+            $newProduct->ativeAds = true;
+        }else{
+            $newProduct->ativeAds = false;
+        }
+        if(empty($dataForm['email'])){
+            $newProduct->emailProdutor = null;
+        }else{
+            $newProduct->emailProdutor = $dataForm['email'];
+        }
+        if(empty($dataForm['telefone'])){
+            $newProduct->telProdutor = null;
+        }else{
+            $newProduct->telProdutor = $dataForm['telefone'];
+        }
+        if(empty($dataForm['nomeProdutor'])){
+            $newProduct->nomeProdutor = null;
+        }else{
+            $newProduct->nomeProdutor = $dataForm['nomeProdutor'];
+        }
+        if(empty($dataForm['sobre'])){
+            $newProduct->about = null;
+        }else{
+            $newProduct->about = $dataForm['sobre'];
+        }
+        if(isset($dataForm['trial'])){
+            $newProduct->trial = true;
+        }else{
+            $newProduct->trial = false;
+        }
+        if(isset($dataForm['upsell'])){
+            $newProduct->upsell = true;
+        }else{
+            $newProduct->upsell = false;
+        }
+        if(isset($dataForm['toolsPage'])){
+            $newProduct->affiliateToolsPage = true;
+        }else{
+            $newProduct->affiliateToolsPage = false;
+        }
+        if(isset($dataForm['mobileTrafic'])){
+            $newProduct->mobileTrafic = true;
+        }else{
+            $newProduct->mobileTrafic = false;
+        }
+        // if(empty($dataForm['comissaoInicial'])){
+            // $newProduct->
+        // }
+        if(!strcmp($dataForm['duracaoCookie'],'Duração do cookie')){
+            $newProduct->cookie_duration = null;
+        }else{
+            $newProduct->cookie_duration = $dataForm['duracaoCookie'];
+        }
+        if(!strcmp($dataForm['comissaoCookie'],'Comissão do cookie')){
+            $newProduct->cookie_type = null;
+        }else{
+            $newProduct->cookie_type = $dataForm['comissaoCookie'];
+        }
+        if(empty($dataForm['notaProduto'])){
+            $newProduct->evaluate = null;
+        }else{
+            $newProduct->evaluate = float($dataForm['notaProduto']);
+        }
+        return redirect(route('listProducts'));
+
     }
 
     /**
@@ -240,7 +379,9 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::where('id','=',$id)->first();
+        // dd($product);
+        return view('pages/editProduct',compact('product',$product));
     }
 
     public function updateProductPreferences(Request $request){
@@ -339,7 +480,8 @@ class ProductsController extends Controller
             $netw->product_id = $product->id;
             $netw->save();        
         } 
-        return view('pages/newProduct',compact('product',$product));
+        // return view('pages/newProduct',compact('product',$product));
+        return redirect(route('newProduct',$id))->with(compact('product',$product ));
     }
 
     public function updateAbout(Request $request){
@@ -349,7 +491,7 @@ class ProductsController extends Controller
         $product  = Product::where('id','=',$id)->first();
         $product->about = base64_encode($text);
         $product->save();
-        return view('pages/showProduct',compact("product",$product));
+        return redirect(route('viewProducts',$id));
     }
 
     public function orderByProducts($order){
@@ -376,7 +518,140 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dataForm   = $request->all();
+        $newProduct = new Product();
+        if(empty($dataForm['valorComissao'])){
+            $newProduct->maxPrice = 0.0;
+        }else{
+            $newProduct->maxPrice = float($dataForm['valorComissao']);
+        }
+    
+        if(isset($dataForm['recorrenteSwitch'])){
+            $newProduct->recurring = true;
+        }else{
+            $newProduct->recurring = false;
+        }
+        if(empty($dataForm['recorrente'])){
+            $newProduct->recorrente = 0.0;
+        }else{
+            $newProduct->recorrente = float($dataForm['recorrente']);
+        }
+        if(!strcmp($dataForm['categoria'],'Categorias')){
+            $newProduct->subject = null;
+        }else{
+            $newProduct->subject = $dataForm['categoria'];
+        }
+        if (empty($dataForm['format'])){
+            $newProduct->format = null;
+        }else{
+            $newProduct->format = $dataForm['format'];
+        }
+        if(!strcmp($dataForm['tipoComissao'],'Tipo de comissão')){
+            $newProduct->type = null;
+        }else{
+            $newProduct->type = $dataForm['tipoComissao'];
+        }if(strcmp($dataForm['statusAfiliacao'],'Status da afialiação')){
+            $newProduct->status_aprovacao = null;
+        }else{
+            $newProduct->status_aprovacao = $dataForm['statusAfiliacao'];
+        }
+        // if(empty($dataForm['pais'])){
+
+        if(empty($dataForm['idioma'])){
+            $newProduct->languge = null;
+        }else{
+            $newProduct->language = $dataForm['idioma'];
+        }
+        if(isset($dataForm['lancamentoSwitch'])){
+            $newProduct->lancamento = true;
+        }else{
+            $newProduct->lancamento = false;
+        }
+        if(!empty($dataForm['start'])){
+            $product->startDate = (new Carbon($dataForm['start']))->format('Y-m-d');  
+            $product->endDate   = (new Carbon($dataForm['end']))->format('Y-m-d'); 
+        }else{$product->startDate  = null;
+            $product->endDate      = null;
+        }
+        if(isset($dataForm['nomeUnico'])){
+            $newProduct->uniqueName = true;
+        }else{
+            $newProduct->uniqueName = false;
+        }
+        if(isset($dataForm['favorito'])){
+            $newProduct->favorites = true;
+        }else{
+            $newProduct->favorites = true;
+        }
+        if(isset($dataForm['midiaPatrocinada'])){
+            $newProduct->midiaPatrocinada = true;
+        }else{
+            $newProduct->midiaPatrocinada = false;
+        }
+        if(isset($dataForm['adsSwitch'])){
+            $newProduct->ativeAds = true;
+        }else{
+            $newProduct->ativeAds = false;
+        }
+        if(empty($dataForm['email'])){
+            $newProduct->emailProdutor = null;
+        }else{
+            $newProduct->emailProdutor = $dataForm['email'];
+        }
+        if(empty($dataForm['telefone'])){
+            $newProduct->telProdutor = null;
+        }else{
+            $newProduct->telProdutor = $dataForm['telefone'];
+        }
+        if(empty($dataForm['nomeProdutor'])){
+            $newProduct->nomeProdutor = null;
+        }else{
+            $newProduct->nomeProdutor = $dataForm['nomeProdutor'];
+        }
+        if(empty($dataForm['sobre'])){
+            $newProduct->about = null;
+        }else{
+            $newProduct->about = $dataForm['sobre'];
+        }
+        if(isset($dataForm['trial'])){
+            $newProduct->trial = true;
+        }else{
+            $newProduct->trial = false;
+        }
+        if(isset($dataForm['upsell'])){
+            $newProduct->upsell = true;
+        }else{
+            $newProduct->upsell = false;
+        }
+        if(isset($dataForm['toolsPage'])){
+            $newProduct->affiliateToolsPage = true;
+        }else{
+            $newProduct->affiliateToolsPage = false;
+        }
+        if(isset($dataForm['mobileTrafic'])){
+            $newProduct->mobileTrafic = true;
+        }else{
+            $newProduct->mobileTrafic = false;
+        }
+        // if(empty($dataForm['comissaoInicial'])){
+            // $newProduct->
+        // }
+        if(!strcmp($dataForm['duracaoCookie'],'Duração do cookie')){
+            $newProduct->cookie_duration = null;
+        }else{
+            $newProduct->cookie_duration = $dataForm['duracaoCookie'];
+        }
+        if(!strcmp($dataForm['comissaoCookie'],'Comissão do cookie')){
+            $newProduct->cookie_type = null;
+        }else{
+            $newProduct->cookie_type = $dataForm['comissaoCookie'];
+        }
+        if(empty($dataForm['notaProduto'])){
+            $newProduct->evaluate = null;
+        }else{
+            $newProduct->evaluate = float($dataForm['notaProduto']);
+        }
+        return redirect(route('listProducts'));
     }
 
     /**
@@ -387,6 +662,87 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Notes::where('product_id','=',$id)->delete();
+        Temperature::where('product_id','=',$id)->delete();
+        Keywords::where('product_id','=',$id)->delete();
+        Ads::where('product_id','=',$id)->delete();
+        Network::where('product_id','=',$id)->delete();
+        Product::where('id','=',$id)->delete();
+        return redirect(route('listProducts'));
+    }
+    public function countProducts(Request $request){
+
+        
+        $c = Product::where('subject','=','imais e Planta')->count();
+        dd($c);
+        if(isset($dataForm['casa_construcao'])){
+            $queryProducts->where('subject','=','Casa e Construçã');
+        }
+        if(isset($dataForm['culinaria'])){
+            $queryProducts->where('subject','=','Culinária e Gastronomia');
+        }
+        if(isset($dataForm['desenvolvimento_pessoal'])){
+            $queryProducts->where('subject','=','Desenvolvimento Pessoal');
+        }
+        if(isset($dataForm['design'])){
+            $queryProducts->where('subject','=','Desig');
+        }
+        if(isset($dataForm['direito'])){
+            $queryProducts->where('subject','=','Direito');
+        }
+        if(isset($dataForm['ecologia'])){
+            $queryProducts->where('subject','=','Ecologia e Meio Ambiente');
+        }
+        if(isset($dataForm['educacional'])){
+            $queryProducts->where('subject','=','Educacional');
+        }
+        if(isset($dataForm['empreendedorismo_digital'])){
+            $queryProducts->where('subject','=','Empreendedorismo Digital');
+        }
+        if(isset($dataForm['entreterimento'])){
+            $queryProducts->where('subject','=','Entretenime');
+        }
+        if(isset($dataForm['espiritualidade'])){
+            $queryProducts->where('subject','=','Espiritualidade');
+        }
+        if(isset($dataForm['financas'])){
+            $queryProducts->where('subject','=','Finanças e Investime');
+        }
+        if(isset($dataForm['hobbies'])){
+            $queryProducts->where('subject','=','Hobbie');
+        }
+        if(isset($dataForm['idioma'])){
+            $queryProducts->where('subject','=','Idioma');
+        }
+        if(isset($dataForm['internet'])){
+            $queryProducts->where('subject','=','Interne');
+        }
+        if(isset($dataForm['literatura'])){
+            $queryProducts->where('subject','=','Literatura');
+        }
+        if(isset($dataForm['moda'])){
+            $queryProducts->where('subject','=','Moda e Beleza');
+        }
+        if(isset($dataForm['tecnologia'])){
+            $queryProducts->where('subject','=','Tecnologia da Informaçã');
+        }
+        if(isset($dataForm['sexualidade'])){
+            $queryProducts->where('subject','=','Sexualidade');
+        }
+        if(isset($dataForm['saude'])){
+            $queryProducts->where('subject','=','Saúde e Esporte');
+        }
+        if(isset($dataForm['outros'])){
+            $queryProducts->where('subject','=','Outr');
+        }
+        if(isset($dataForm['apps'])){
+            $queryProducts->where('subject','=','pps & Software');
+        }
+        if(isset($dataForm['negocios'])){
+            $queryProducts->where('subject','=','Negócios e Carreira');
+        }
+        if(isset($dataForm['musica'])){
+            $queryProducts->where('subject','=','Música e Arte');
+        }
     }
 }

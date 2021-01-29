@@ -74,14 +74,15 @@
                                     <!-- <div class="col"></div> -->
 
                     
-                                        <div class="col text-right"><h5> <strong style="color: #71a35b;">0%</strong>|<strong style="color: #c86060">0º</strong>|<strong style="color: #e4af7a">0</strong></h5></div>
+                                        <div class="col text-right"><h5> <strong style="color: #71a35b;">{{ $product->percentage }}%</strong>|<strong style="color: #c86060">{{ $product->temperatures[0]->value }}º</strong>|<strong style="color: #e4af7a">{{ $product->evaluate }}</strong></h5></div>
                                     
                                 </div>
 
                                 <div class="row">
                                     <div class="col">
-                                        @if($product->commission)
-                                            <h5 style="color:#71a35b">Comissão R$ {{ $product->commission }}</h5>
+                                            
+                                        @if($product->comission)    
+                                            <h5 style="color:#71a35b">Comissão R$ {{ $product->comission }}</h5>
                                         @else
                                             <h5 style="color:#71a35b">Comissão R$ 0.0</h5>
                                         @endif
@@ -121,8 +122,8 @@
                                 <div class="row">
                                     <div class="col">   
                                         <label for="valorComissao">Valor da comissão</label>
-                                        @if($product->commission)
-                                            <input class="form-control form-control-lg" type="text" name="valorComissao" id="valorComissao" value="{{ $product->commission }}"/>
+                                        @if($product->comission)
+                                            <input class="form-control form-control-lg" type="text" name="valorComissao" id="valorComissao" value="{{ $product->comission }}"/>
                                         @else
                                             <input class="form-control form-control-lg" type="text" name="valorComissao" id="valorComissao" />
                                         @endif
@@ -682,8 +683,8 @@
                                 <div class="row">
                                     <div class="col">
                                         <label for="sobre">Sobre</label>
-                                        @if($product->about)
-                                            <textarea class="form-control" id="sobre" name="sobre" rows="10"  value="{{ base64_decode($product->about) }}"></textarea>
+                                        @if(!empty($product->about))
+                                            <textarea class="form-control" id="sobre" name="sobre" rows="10"> {{ base64_decode($product->about) }}</textarea>
                                         @else
                                             <textarea class="form-control" id="sobre" name="sobre" rows="10" ></textarea>
                                         @endif
@@ -832,7 +833,7 @@
                                                 <option>de 180 dias</option>
 	    				                    </select>
                                     @endswitch
-                                    </div>
+                                    </div>  
                                 </div>
                                 <br>
                                 <br>
