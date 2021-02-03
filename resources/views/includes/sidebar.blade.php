@@ -7,15 +7,14 @@
 	<div data-scrollbar="true" data-height="100%">
 		@if (!$sidebarSearch)
 		<!-- begin sidebar user -->
-		<ul class="nav" style="padding-top:30px;">
-			<center>
-				<a href="{{ route('newProductDialog') }}" class="btn btn-default">Novo Produto</a>
-			</center>
-		</ul>
+		<!-- <ul class="nav" style="padding-top:30px;">
+			
+		</ul> -->
 		<!-- end sidebar user -->
 		@endif
 		<!-- begin sidebar nav -->
 		<ul class="nav">
+			<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
 			@if ($sidebarSearch)
 			<li class="nav-search">
         <input type="text" class="form-control" placeholder="Sidebar menu filter..." data-sidebar-search="true" />
@@ -47,6 +46,7 @@
 						
 						$active = (!empty($menu['route-name']) && (Route::currentRouteName() == $menu['route-name'])) ? 'active' : '';
 						
+
 						if ($active) {
 							$GLOBALS['parent_active'] = true;
 							$GLOBALS['active'][$GLOBALS['sub_level'] - 1] = true;
@@ -73,8 +73,14 @@
 					$hasImg = (!empty($menu['img'])) ? '<div class="icon-img"><img src="'. $menu['img'] .'" /></div>' : '';
 					$hasLabel = (!empty($menu['label'])) ? '<span class="label label-theme m-l-5">'. $menu['label'] .'</span>' : '';
 					$hasTitle = (!empty($menu['title'])) ? '<span>'. $menu['title'] . $hasLabel .'</span>' : '';
-					$hasBadge = (!empty($menu['badge'])) ? '<span class="badge pull-right">'. $menu['badge'] .'</span>' : '';
 					
+					
+					if( (isset($menu['badge'])) && (!strcmp($menu['badge'],"hotmart"))){
+						$hasBadge =  '<span class="badge pull-right">'. App\Product::count() .'</span>';
+					}else{
+						$hasBadge = '';
+					}
+
 					$subMenu = '';
 					
 					if (!empty($menu['sub_menu'])) {
@@ -107,7 +113,7 @@
 
 			@endphp
 			<!-- begin sidebar minify button -->
-			<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+			<!-- <li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li> -->
 			<!-- end sidebar minify button -->
 		</ul>
 		<!-- end sidebar nav -->

@@ -22,8 +22,29 @@ class ProductsController extends Controller
     {
         $products = Product::paginate(20);
         $count    = Product::count();
-        $data = ["count" => $count,"products" =>$products];
+        $data     = ["count" => $count,"products" =>$products];
         return view('pages/listProducts',$data);
+    }
+    public function setUniqueName($id){
+
+        $product = Product::where('id','=',$id)->first();
+        if($product->uniqueName){
+            $product->uniqueName = false;
+        }else{
+            $product->uniqueName = true;
+        }
+        $product->save();
+        return 'ok';
+    }
+    public function setFavorite($id){
+        $product = Product::where('id','=',$id)->first();
+        if($product->favorites){
+            $product->favorites = false;
+        }else{
+            $product->favorites = true;
+        }
+        $product->save();
+        return 'ok';
     }
 
     public function applyFilters(Request $request)
@@ -199,10 +220,16 @@ class ProductsController extends Controller
             $queryProducts->where('format','=','Áudios, Músicas, Ringtones');
         }
 
+        if(isset($dataForm['favoritos'])){
+            $queryProducts->where('favorites','=',true);
+        }
+        if(isset($dataForm['estrela'])){
+            $queryProducts->where('uniqueName','=',true);
+        }
 
+        $filtersCount = count($queryProducts->get());
         $products = $queryProducts->paginate(20);
-        // dd($products);
-        $data = ["count" => $count,"products" =>$products];
+        $data = ["count" => $count,"products" =>$products,"filtersCount" => $filtersCount];
         return view('pages/listProducts',$data);
     }
     /**
@@ -394,7 +421,7 @@ class ProductsController extends Controller
         $product  = Product::where('id','=',$id)->first();
         // dd($dataForm);
         
-        if($dataForm['recorrente']){
+        if(isset($dataForm['recorrente'])){
            $product->recorrente = floatval($dataForm['recorrente']); 
         }
         else{

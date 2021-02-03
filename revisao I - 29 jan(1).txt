@@ -1,0 +1,81 @@
+Revisão do robo
+
+# Status de afiliação
+- falta extrair a informação Status de afiliação "Af. por 1 clique ou Requer aprovação"
+	Na hotmart, Af. por 1 clique aparece escrito no botão "Afiliar-se agora" quando estiver escrito isso, voce marca no banco 
+	Se tiver escrito "Este produto aceita somente cadastros de Pessoas Jurídicas. Seu cadastro na Hotmart é como Pessoa Física." Então voce marca no banco "Obrigatório PJ" (novo)
+        e se for "Solicitar Afiliação" voce marca no banco a opção "Requer aprovação"
+
+	Se a opção for diferente dessas 3 acima, marcar como "Requer aprovação"
+
+# Recorente
+- quando o valor monetario existir, habilitar o campo "Recorrente - Recurring $/Rebil"
+
+
+# Implementar a view em php que traz o comparativo entre o excel e o banco categorias na VM que extrai
+
+
+
+Revisão geral Sistema
+
+# Geral
+
+Menu principal da esquerda
+- Mover o botão Novo produto ao lado do campo de busca # Ok
+- Icones Favoritos (coração) = ion-md-heart # ok
+- Hotmart = ion-md-globe # ok
+- Clickbank = ion-md-globe (igual) # ok
+- os numeros 80, 10, 10 precisam refletir o numero exato de conteudo. # ok
+- bt de reduzir a vview do menu, trazer pra cima # ok
+
+
+# Tela Listagem de produtos (grid)
+- ajustar os espaços em branco  
+- Botão de ordenação na coloração verde musgo e tamanho menor # ok
+- Total de produtos (aparentemente esta invertido) checar # ok
+- Remover botão de expandir e X vermelhor dessa tela pq não faz sentido aqui # ok
+- Faltou o botão "Favoritos e Estrela" sobre os produtos  # ok
+
+
+# Barra de filtro
+
+- Estrela = Nome único # ok
+- Aumentar o width e garantir que as frases ficam na linha (sem qubra) # ok
+- Subir o botão "aplicar filtros" e colocar em baixo da seleção de networks e add ao lado um BT X 
+para limpar todas as seleções # ok
+- Item "% da comissão" tirar os "R$" manter somente a numeração # OK
+- a barra deve estar ativa somente quando no modo grid (listagem) dos cursos, quando o usuario
+acessar um curso especifico, a aba nao deve aparecer. # ok
+- Os itens "Categorias, Formato, Idioma" add um [ ] Todas - esse checkbox seleciona todas as opções  # ?
+
+# Dentro do curso 
+
+- a barra superior preta que contem o ID, eu naõ consigo selecionar o texto, ele habilita no ponteiro do mouse um
+cursos de mover elemento. precisa remover esse Mover.  # ok
+
+- Apos o ID ? Network | vem o formato, nesse campo, vamos trazer somente as 2 primeiras palavras  # ok
+- Onde esta escrito "Infinita" trazer a palavra "Cookie" antes, vai ficar assim "Cookie infinita" # ok
+- O último item "Ultimo clique" vamos remover a "|" barra verticar e colocar uma virgula para seprarar os itens
+na nova formatação vai ficar. ex: Cookie infinito, Ultimo clique. # ok
+
+- A imagem do curso, sobrepoem a vaixa cinza (ver o print)
+- O numero responsavel pela porcentagem no azul claro #64a9ad
+- O campo inputext "Recorrente - Recurring $/Rebil" deve receber numero monetário, porem não pode ser travado em real
+porque pode ser outras moedas. #
+
+
+- Todos os links criados precisam de open_blank para abrir em uma nova aba.#ok
+O botão de remover precisa de um modal de confirmação
+
+- Campo "Sobre" (edição) = gostaria de algo on-the-fly
+https://seantheme.com/color-admin/admin/html/form_editable.html 
+
+- Botão Salvar alterações
+Como vamos utilizar uma edição on-the-fly pensei em não usar o botão salvar e deixar a usabilidade mais fluida.
+
+
+
+# Anotações do felipe
+
+icone target = ion-md-locate
+eNotas - Nota Fiscal Automágica para Negócios Inteligentes

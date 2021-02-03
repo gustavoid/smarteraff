@@ -3,7 +3,7 @@ var handleIonRangeSlider = function() {
 		min: 0,
 		max: 100,
 		type: 'double',
-		prefix: "R$",
+		prefix: "%",
 		maxPostfix: "+",
 		prettify: false,
 		hasGrid: true,
@@ -11,7 +11,7 @@ var handleIonRangeSlider = function() {
     });
     $('#priceValue').ionRangeSlider({
 		min: 0,
-		max: 10000,
+		max: 5000,
 		type: 'double',
 		prefix: "R$",
 		maxPostfix: "+",

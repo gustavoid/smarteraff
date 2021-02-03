@@ -52,7 +52,12 @@
 	@includeWhen($headerMegaMenu, 'includes.header-mega-menu')
 	
 	<!-- begin header-nav -->
+
+
 	<ul class="navbar-nav navbar-right">
+
+
+
 		<li class="navbar-form">
 			<form action="" method="POST" name="search_form">
 				<div class="form-group">
@@ -60,6 +65,11 @@
 					<button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
 				</div>
 			</form>
+		</li>
+		<li class="navbar-form">
+			<center>
+				<a href="{{ route('newProductDialog') }}" class="btn btn-inverse">Novo Produto</a>
+			</center>
 		</li>
 		<li class="dropdown">
 			<a href="#" data-toggle="dropdown" class="dropdown-toggle f-s-14">
@@ -83,7 +93,7 @@
 						<i class="fab fa-facebook-messenger text-blue media-object-icon"></i>
 					</div>
 					<div class="media-body">
-						<h6 class="media-heading">John Smith</h6>
+						<h6 class="media-heading">{{ Auth::user()->name }}</h6>
 						<p>Quisque pulvinar tellus sit amet sem scelerisque tincidunt.</p>
 						<div class="text-muted f-s-10">25 minutes ago</div>
 					</div>
@@ -142,7 +152,7 @@
 		<li class="dropdown navbar-user">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 				<img src="/assets/img/user/user-13.jpg" alt="" /> 
-				<span class="d-none d-md-inline">Adam Schwartz</span> <b class="caret"></b>
+				<span class="d-none d-md-inline">{{ Auth::user()->name }}</span> <b class="caret"></b>
 			</a>
 			<div class="dropdown-menu dropdown-menu-right">
 				<a href="javascript:;" class="dropdown-item">Edit Profile</a>
@@ -150,7 +160,12 @@
 				<a href="javascript:;" class="dropdown-item">Calendar</a>
 				<a href="javascript:;" class="dropdown-item">Setting</a>
 				<div class="dropdown-divider"></div>
-				<a href="javascript:;" class="dropdown-item">Log Out</a>
+				<a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+				    Logout
+				</a>    
+				<form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+				    {{ csrf_field() }}
+				</form>
 			</div>
 		</li>
 		@if($sidebarTwo)

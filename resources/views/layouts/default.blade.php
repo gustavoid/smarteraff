@@ -22,8 +22,11 @@
 	$pageContainerClass .= (!empty($sidebarTwo)) ? 'page-with-two-sidebar ' : '';
 	$pageContainerClass .= (!empty($contentFullHeight)) ? 'page-content-full-height ' : '';
 	
+	
 	$contentClass = (!empty($contentFullWidth) || !empty($contentFullHeight)) ? 'content-full-width ' : '';
 	$contentClass .= (!empty($contentInverseMode)) ? 'content-inverse-mode ' : '';
+
+
 @endphp
 <body class="{{ $bodyClass }}">
 	@include('includes.component.page-loader')
@@ -44,7 +47,7 @@
 		
 		@includeWhen($footer, 'includes.footer')
 		
-		@include('includes.component.theme-panel')
+		{{-- @include('includes.component.theme-panel') --}}
 		
 		@include('includes.component.scroll-top-btn')
 		

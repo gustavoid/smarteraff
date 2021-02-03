@@ -32,7 +32,8 @@ Route::post('/updateAbout','ProductsController@updateAbout')->name('updateAbout'
 Route::post('/updateProductsPreferences','ProductsController@updateProductPreferences')->name('updateProductPreferences')->middleware('auth');
 Route::get('/orderBy/{order}','ProductsController@orderByProducts')->name('orderProducts')->middleware('auth');
 Route::get('/countproductsbysubject','ProductsController@countProducts')->name('countProducts');
-
+Route::get('/product/setfavorite/{id}','ProductsController@setFavorite')->name('setFavorite')->middleware('auth');
+Route::get('/product/setuniquename/{id}','ProductsController@setUniqueName')->name('setUniqueName')->middleware('auth');
 
 
 

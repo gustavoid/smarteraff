@@ -65,20 +65,19 @@
 
         </div>
 
-        <div class="row">
-            <div class="col">
+        <!-- <div class="row">
+            <div class="col"> -->
 
 	             <!-- begin panel -->
 	            <div class="panel panel-inverse">
 	            	<div class="panel-heading">
-	            		<h4 class="panel-title">ID {{ $product->idWebsite }} | {{ $product->network->origin }} | {{ $product->format }} | {{ $product->subject }} | {{ $product->cookie_duration }} | {{ $product->cookie_type }} <i class="fa fa-rocket" style="padding-left: 8px"></i></h4>
+	            		<h4 class="panel-title">ID {{ $product->idWebsite }} | {{ $product->network->origin }} | {{ explode(',',$product->format)[0] }} | {{ $product->subject }} | Cookie {{ $product->cookie_duration }}, {{ $product->cookie_type }} <i class="fa fa-rocket" style="padding-left: 8px"></i></h4>
 	            		<div class="panel-heading-btn">
 	            			<a href="javascript:if (confirm('Deseja deletar o produto?') == true){ window.location.href = '{{ route('deleteProduct',$product->id) }}' };" class="btn btn-xs btn-icon btn-circle btn-default"><i class="fa fa-trash"></i></a>
 	            			<a href="{{ route('editProduct',$product->id) }}" class="btn btn-xs btn-icon btn-circle btn-default" ><i class="fa fa-edit"></i></a>
 	            			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
 	            			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
 	            		</div>
-
 	            	</div>
                     <div class="row" style="height:80px;padding: 0;margin: 0;">
                             <div class="col" style="background-color: #343a40">
@@ -88,36 +87,38 @@
                         </div>
 	            	<div class="panel-body">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-md-3" style="top: -60px">
                                 <div class="card border-0 text-white">
 	    			            	<img class="card-img" src="/assets/img/gallery/gallery-13.jpg" alt="Card image">
 	    			            	<div class="card-img-overlay">
-	    			            		<!-- <p class="card-text">Last updated 3 mins ago</p> -->
 	    			            	</div>
 	    			            </div>
                                 <br>
-
                                 <div class="row">
                                     <div class="col">
-                                        <h5 style="color: #7b8084;">Venda R${{ $product->maxPrice }}</h5>
+                                        <h5 style="color: #7b8084;">Venda {{ $product->maxPrice }}</h5>
                                     </div>
-                                    <!-- <div class="col"></div> -->
                                     <div class="col text-right"><h5> <strong style="color: #71a35b;">{{ $product->percentage }}%</strong>|<strong style="color: #c86060">{{ $product->temperatures[0]->value }}º</strong>|<strong style="color: #e4af7a">{{ $product->evaluation }}</strong></h5></div>
                                 </div>
-
                                 <div class="row">
                                     <div class="col">
-                                        <h5 style="color:#71a35b">Comissão R${{ $product->comission }}</h5>
+                                        <h5 style="color:#71a35b">Comissão {{ $product->comission }}</h5>
                                     </div>
-                                    <!-- <div class="col"></div> -->
                                     <div class="col-sm-3 text-right"><h6 style="color:#7b8084">CPA</h6></div>
                                 </div>
-
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 style="color:#9785bb">Recorrente R$56.3</h5>
+                                @if($product->recorrente)
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5 style="color:#9785bb">Recorrente {{ $product->recorrente }}</h5>
+                                        </div>
                                     </div>
-                                </div>
+                                @else
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5 style="color:#9785bb">Recorrente 0</h5>
+                                        </div>
+                                    </div>
+                                @endif
                                 <hr>
                                 <form action="{{ route('updateProductPreferences') }}" method="POST">
                                     @csrf
@@ -380,7 +381,7 @@
 
                                 <div class="row">
                                     <div class="col">
-                                        <a href="{{ $product->pageProduct }}">Pagina de vendas</a>
+                                        <a href="{{ $product->pageProduct }}"  target="_blank">Pagina de vendas</a>
                                     </div>
                                 </div>
 
@@ -400,7 +401,7 @@
                                 <br>
                                 <div class="row">
                                     <div class="col">
-                                        <a href="{{ $product->checkout }}">Pagina de checkout</a>
+                                        <a href="{{ $product->checkout }}"  target="_blank">Pagina de checkout</a>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -419,7 +420,7 @@
                                 <br>
                                 <div class="row">
                                     <div class="col">
-                                        <a href="{{ $product->link }}">Pagina do afiliado</a>
+                                        <a href="{{ $product->link }}"  target="_blank">Pagina do afiliado</a>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -506,8 +507,8 @@
 	            	</div>
                 </div>
                 <!-- end panel -->
-	        </div>
-        </div>
+	        <!-- </div> -->
+        <!-- </div> -->
     @endif
 @endsection
 

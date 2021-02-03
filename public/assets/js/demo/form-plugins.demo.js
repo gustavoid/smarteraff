@@ -50,7 +50,7 @@ var handleDatepicker = function() {
 var handleIonRangeSlider = function() {
 	$('#priceValue').ionRangeSlider({
 		min: 0,
-		max: 10000,
+		max: 5000,
 		type: 'double',
 		prefix: "R$",
 		maxPostfix: "+",
@@ -62,7 +62,7 @@ var handleIonRangeSlider = function() {
 		min: 0,
 		max: 100,
 		type: 'double',
-		prefix: "R$",
+		postfix: "%",
 		maxPostfix: "+",
 		prettify: false,
 		hasGrid: true,
@@ -321,6 +321,33 @@ var handleSimpleColorpicker = function() {
 	$('select[name="colorpicker-picker-longlist"]').simplecolorpicker({picker: true, theme: 'glyphicons'});
 };
 
+var handleBtnsImg = function(){
+	$('.fa.fa-heart.fa-lg').click(function(){
+		var color = $(this).css('color');
+		var id = $(this).attr('name');
+		if(color == 'rgb(255, 255, 255)'){
+			$(this).css('color',"#ce0e14");
+		}else{
+			$(this).css('color',"#ffffff");
+		}
+		$.get("/product/setfavorite/"+id, function(data, status){
+			console.log("Data: " + data + "\nStatus: " + status);
+		});
+	});
+	$('.fa.fa-star.fa-lg').click(function(){
+		var color = $(this).css('color');
+		var id = $(this).attr('name');
+		if(color == 'rgb(255, 255, 255)'){
+			$(this).css('color',"#d4cc0b");
+		}else{
+			$(this).css('color',"#ffffff");
+		}
+		$.get("/product/setuniquename/"+id, function(data, status){
+			console.log("Data: " + data + "\nStatus: " + status);
+		});
+	});
+};
+
 var handleClipboard = function() {
 	var clipboard = new ClipboardJS('.btn');
 	
@@ -347,6 +374,7 @@ var FormPlugins = function () {
 	return {
 		//main function
 		init: function () {
+			handleBtnsImg();
 			handleDatepicker();
 			handleIonRangeSlider();
 			handleFormMaskedInput();

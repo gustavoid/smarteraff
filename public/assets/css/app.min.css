@@ -21880,6 +21880,15 @@ code.inverse-mode {
   padding: 5px 15px;
   margin: 0;
 }
+.gallery .image .image-icons {
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 5px 5px;
+  margin: 0;
+}
 
 .gallery .image .image-info {
   background: #FFFFFF;

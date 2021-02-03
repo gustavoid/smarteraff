@@ -17,7 +17,7 @@ return [
   'menu' => [[
 		'icon' => 'fab fa-simplybuilt',
 		'title' => 'Meus Produtos',
-		'badge' => '10',
+		'badge' => 'hotmart',
 		'url' => '/myproducts',
 		'route-name' => 'myproducts'
 	],[
@@ -29,7 +29,7 @@ return [
 		'title' => 'Nome Unico',
 		'url' => '/nomeunico',
 	],[
-		'icon' => 'fa fa-envelope',
+		'icon' => 'fa fa-heart',
 		'title' => 'Favoritos',
 		'url' => '/favoritos',
 
@@ -37,15 +37,15 @@ return [
 		'navheader' => True,
 		'title'     => 'Networks'
 	],[
-		'icon' => 'fa fa-th-large',
+		'icon' => 'fa fa-globe',
 		'title' => 'HotMart',
-		'badge' => '80',
+		'badge' => 'hotmart',
 		'url' => '/hotmart'
 	
 	],[
-		'icon' => 'fa fa-hdd',
+		'icon' => 'fa fa-globe',
 		'title' => 'Clickbank',
 		'url' => '/clickbank',
-		'badge' => '10',
+		'badge' => '0',
 	]]
 ];
