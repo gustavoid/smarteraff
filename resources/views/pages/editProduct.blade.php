@@ -26,11 +26,40 @@
         </div>
         <div class="row">
             <div class="col">
-                @if($product->title)
-                    <h1 class="page-header">{{ base64_decode($product->title) }}<i class="flag-icon flag-icon-us"></i> </h1> 
-                @else
-                    <h1 class="page-header">Titulo do produto<i class="flag-icon flag-icon-us"></i> </h1> 
-                @endif
+            @switch($product->language)
+                    @case('talian')
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-it"></i> </h1> 
+                        @break
+                    @case('Russ')
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-ru"></i> </h1> 
+                        @break
+                    @case('Português (Portugal)')
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-pt"></i> </h1> 
+                        @break
+                    @case('Português (Brasil)')
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-br"></i> </h1> 
+                        @break
+                    @case('Português (Brasil)')
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-br"></i> </h1> 
+                        @break
+                    @case('Alemã')
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-de"></i> </h1> 
+                        @break
+                    @case('Árabe')
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-sa"></i> </h1> 
+                        @break
+                    @case('Espanhol')
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-es"></i> </h1> 
+                        @break
+                    @case('Francês')
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-fr"></i> </h1> 
+                        @break
+                    @case('Japonês')
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-jp"></i> </h1> 
+                        @break
+                    @default
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-us"></i> </h1> 
+                @endswitch
             </div>  
         </div>
 
@@ -426,6 +455,19 @@
                                 <br>
                                 <div class="row">
                                     <div class="col">
+                                        <select class="form-control" name="unidadeMonetaria" id="unidadeMonetaria">
+                                            <option>Unidade monetária</option>
+	    				                	<option>Real-BR</option>
+                                            <option>Dollar-US</option>
+                                            <option>Euro-UE</option>
+                                            <option>Pound-UK</option>
+	    				                </select>
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="row">
+                                    <div class="col">
                                         @switch($product->type)
                                             @case('CPA')
                                                 <select class="form-control" name="tipoComissao" id="tipoComissao">
@@ -496,6 +538,7 @@
                                                 <option>Requer aprovação</option>
                                                 <option>Aguardando aprovação</option>
                                                 <option>Aprovado</option>
+                                                <option>Obrigatório PJ</option>
 	    				                    </select>
                                         @break
                                         @case('Aprovação 1 clique')
@@ -504,10 +547,21 @@
                                                 <option>Requer aprovação</option>
                                                 <option>Aguardando aprovação</option>
                                                 <option>Aprovado</option>
+                                                <option>Obrigatório PJ</option>
 	    				                    </select>
                                         @break
                                         @case('Requer aprovação')
                                             <select class="form-control" name="statusAfiliacao" id="statusAfiliacao">
+                                                <option>Requer aprovação</option>
+	    				                    	<option>Aprovação 1 clique</option>
+                                                <option>Aguardando aprovação</option>
+                                                <option>Aprovado</option>
+                                                <option>Obrigatório PJ</option>
+	    				                    </select>
+                                        @break
+                                        @case('Obrigatório PJ')
+                                        <select class="form-control" name="statusAfiliacao" id="statusAfiliacao">
+                                                <option>Obrigatório PJ</option>
                                                 <option>Requer aprovação</option>
 	    				                    	<option>Aprovação 1 clique</option>
                                                 <option>Aguardando aprovação</option>
@@ -520,6 +574,7 @@
 	    				                    	<option>Aprovação 1 clique</option>
                                                 <option>Requer aprovação</option>
                                                 <option>Aprovado</option>
+                                                <option>Obrigatório PJ</option>
 	    				                    </select>
                                         @break
                                         @case('Aprovado')
@@ -528,6 +583,7 @@
 	    				                    	<option>Aprovação 1 clique</option>
                                                 <option>Requer aprovação</option>
                                                 <option>Aguardando aprovação</option>
+                                                <option>Obrigatório PJ</option>
 	    				                    </select>
                                         @break
                                         @default
@@ -537,6 +593,7 @@
 	    				                    	<option>Aprovação 1 clique</option>
                                                 <option>Requer aprovação</option>
                                                 <option>Aguardando aprovação</option>
+                                                <option>Obrigatório PJ</option>
 	    				                    </select>
                                     @endswitch
                                     </div>

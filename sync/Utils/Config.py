@@ -1,0 +1,5 @@
+TIMEOUT_VALUE    = 35
+LOGIN_MAX_TRIES  = 15
+MARKET_MAX_TRIES = 5
+COOKIE_FILENAME  = "_cookies.pkl"
+IMAGE_PATH       = 'images'

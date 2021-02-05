@@ -38,7 +38,7 @@ return [
 		'title'     => 'Networks'
 	],[
 		'icon' => 'fa fa-globe',
-		'title' => 'HotMart',
+		'title' => 'Hotmart',
 		'badge' => 'hotmart',
 		'url' => '/hotmart'
 	

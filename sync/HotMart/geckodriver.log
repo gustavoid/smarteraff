@@ -1,0 +1,57 @@
+1607998964405	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileOaiRfs"
+*** You are running in headless mode.
+console.error: Enterprise Policies: 
+  Error parsing JSON file
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1607998972861	Marionette	INFO	Listening on port 36293
+1607998972936	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1607998984020	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileTDWfAN"
+console.error: Enterprise Policies: 
+  Error parsing JSON file
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1607998990114	Marionette	INFO	Listening on port 43591
+1607998990149	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+1607999027357	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1607999031775	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1607999032493	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+EnvSendPing@https://s-usc1c-nss-263.firebaseio.com/.lp?dframe=t&id=3259397&pw=Vu4cTbrXng&ns=omnichat-prod:6:5
+EnvDisconnect@https://s-usc1c-nss-263.firebaseio.com/.lp?dframe=t&id=3259397&pw=Vu4cTbrXng&ns=omnichat-prod:10:12
+i/</</He</t.prototype.shutdown_@https://vulcano.hotmart.com/app-vulcano/0db4a5c2149c4e1173c4431bdc6a34f5ab555573.js?meteor_js_resource=true:785:22504
+i/</</He</t.prototype.onClosed_@https://vulcano.hotmart.com/app-vulcano/0db4a5c2149c4e1173c4431bdc6a34f5ab555573.js?meteor_js_resource=true:785:22759
+i/</</He</t.prototype.open/</r.scriptTagHolder</<@https://vulcano.hotmart.com/app-vulcano/0db4a5c2149c4e1173c4431bdc6a34f5ab555573.js?meteor_js_resource=true:785:21021
+i/</</Ue</t.prototype.closeAfter@https://vulcano.hotmart.com/app-vulcano/0db4a5c2149c4e1173c4431bdc6a34f5ab555573.js?meteor_js_resource=true:785:18958
+i/</</He</t.prototype.open/</r.scriptTagHolder<@https://vulcano.hotmart.com/app-vulcano/0db4a5c2149c4e1173c4431bdc6a34f5ab555573.js?meteor_js_resource=true:785:20994
+pLPCommand@https://s-usc1c-nss-263.firebaseio.com/.lp?start=t&ser=44138294&cb=1&v=5&ns=omnichat-prod:3:47
+@https://s-usc1c-nss-263.firebaseio.com/.lp?id=3259397&pw=Vu4cTbrXng&ser=39065738&ns=omnichat-prod&seg0=6&ts0=1&d0=eyJ0IjoiYyIsImQiOnsidCI6Im4iLCJkIjp7fX19:2:11
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.

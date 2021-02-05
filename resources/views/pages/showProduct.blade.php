@@ -71,7 +71,7 @@
 	             <!-- begin panel -->
 	            <div class="panel panel-inverse">
 	            	<div class="panel-heading">
-	            		<h4 class="panel-title">ID {{ $product->idWebsite }} | {{ $product->network->origin }} | {{ explode(',',$product->format)[0] }} | {{ $product->subject }} | Cookie {{ $product->cookie_duration }}, {{ $product->cookie_type }} <i class="fa fa-rocket" style="padding-left: 8px"></i></h4>
+	            		<h4 class="panel-title">ID {{ $product->idWebsite }} | {{ $product->network->origin }} | {{ explode(',',$product->format)[0] }} | {{ $product->subject }} | Cookie {{ ($product->cookie_duration == 'infinita') ? 'infinito' : $product->cookie_duration }}, {{ $product->cookie_type }} </h4>
 	            		<div class="panel-heading-btn">
 	            			<a href="javascript:if (confirm('Deseja deletar o produto?') == true){ window.location.href = '{{ route('deleteProduct',$product->id) }}' };" class="btn btn-xs btn-icon btn-circle btn-default"><i class="fa fa-trash"></i></a>
 	            			<a href="{{ route('editProduct',$product->id) }}" class="btn btn-xs btn-icon btn-circle btn-default" ><i class="fa fa-edit"></i></a>
@@ -98,7 +98,7 @@
                                     <div class="col">
                                         <h5 style="color: #7b8084;">Venda {{ $product->maxPrice }}</h5>
                                     </div>
-                                    <div class="col text-right"><h5> <strong style="color: #71a35b;">{{ $product->percentage }}%</strong>|<strong style="color: #c86060">{{ $product->temperatures[0]->value }}º</strong>|<strong style="color: #e4af7a">{{ $product->evaluation }}</strong></h5></div>
+                                    <div class="col text-right"><h5> <strong style="color: #64a9ad;">{{ $product->percentage }}%</strong>|<strong style="color: #c86060">{{ $product->temperatures[0]->value }}º</strong>|<strong style="color: #e4af7a">{{ $product->evaluation }}</strong></h5></div>
                                 </div>
                                 <div class="row">
                                     <div class="col">

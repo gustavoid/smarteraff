@@ -1,0 +1,355 @@
+1612545816020	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileHeFkUp"
+console.error: Enterprise Policies: 
+  Error parsing JSON file
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1612545830242	Marionette	INFO	Listening on port 32961
+1612545830254	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+1612545949780	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileKxZ2dI"
+console.error: Enterprise Policies: 
+  Error parsing JSON file
+JavaScript error: , line 0: AbortError: A request was aborted, for example through a call to IDBTransaction.abort.
+1612545962959	Marionette	INFO	Stopped listening on port 32961
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1612545965861	Marionette	INFO	Listening on port 41237
+1612545965920	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1612546269692	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile0qHTDh"
+console.error: Enterprise Policies: 
+  Error parsing JSON file
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1612546288167	Marionette	INFO	Listening on port 39685
+1612546288255	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: https://vulcano.hotmart.com/app-vulcano-dashboard/bundle.js, line 2: Error: Request aborted
+JavaScript error: https://vulcano.hotmart.com/app-vulcano-dashboard/bundle.js, line 2: Error: Request aborted
+JavaScript error: https://vulcano.hotmart.com/app-vulcano-dashboard/bundle.js, line 2: Error: Request aborted
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1612550606061	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilemJwc1X"
+console.error: Enterprise Policies: 
+  Error parsing JSON file
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1612550623220	Marionette	INFO	Listening on port 43385
+1612550623312	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+console.error: services.settings: 
+DOMException
+  - prototype DOMException
+    - ABORT_ERR = 20
+    - DATA_CLONE_ERR = 25
+    - DOMSTRING_SIZE_ERR = 2
+    - HIERARCHY_REQUEST_ERR = 3
+    - INDEX_SIZE_ERR = 1
+    - INUSE_ATTRIBUTE_ERR = 10
+    - INVALID_ACCESS_ERR = 15
+    - INVALID_CHARACTER_ERR = 5
+    - INVALID_MODIFICATION_ERR = 13
+    - INVALID_NODE_TYPE_ERR = 24
+    - INVALID_STATE_ERR = 11
+    - NAMESPACE_ERR = 14
+    - NETWORK_ERR = 19
+    - NOT_FOUND_ERR = 8
+    - NOT_SUPPORTED_ERR = 9
+    - NO_DATA_ALLOWED_ERR = 6
+    - NO_MODIFICATION_ALLOWED_ERR = 7
+    - QUOTA_EXCEEDED_ERR = 22
+    - SECURITY_ERR = 18
+    - SYNTAX_ERR = 12
+    - TIMEOUT_ERR = 23
+    - TYPE_MISMATCH_ERR = 17
+    - URL_MISMATCH_ERR = 21
+    - VALIDATION_ERR = 16
+    - WRONG_DOCUMENT_ERR = 4
+    - code = 20
+    - columnNumber = 0
+    - data = null
+    - filename = 
+    - lineNumber = 0
+    - location = null
+    - message = The operation was aborted. 
+    - name = AbortError
+    - result = 2152923156
+    - stack = 
+  - prototype Error
+  - prototype Object
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+console.error: services.settings: 
+  Message: TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  Message: TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  Message: TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  Message: TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  Message: TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  Message: TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  Message: TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  Message: TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  Message: TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  Message: TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  Message: TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  Message: TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings: 
+  Message: NetworkOfflineError: Network is offline
+  Stack:
+    NetworkOfflineError@resource://services-settings/RemoteSettingsClient.jsm:129:5
+maybeSync@resource://services-settings/RemoteSettingsClient.jsm:515:15
+remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:310:22
+
+1612550976804	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile0yXIIO"
+console.error: Enterprise Policies: 
+  Error parsing JSON file
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 343))
+1612551009215	Marionette	INFO	Listening on port 41893
+1612551009269	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1612551518900	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileuzs7pK"
+console.error: Enterprise Policies: 
+  Error parsing JSON file
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1612551534658	Marionette	INFO	Listening on port 42077
+1612551534756	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: , line 0: AbortError: A request was aborted, for example through a call to IDBTransaction.abort.
+1612551561484	Marionette	INFO	Stopped listening on port 43385
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: resource://activity-stream/lib/Screenshots.jsm, line 127: TypeError: cache is undefined
+JavaScript error: , line 0: UnknownError: The operation failed for reasons unrelated to the database itself and not covered by any other error code.
+1612554204823	Marionette	INFO	Stopped listening on port 42077

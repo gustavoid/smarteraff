@@ -10,6 +10,7 @@ use App\Temperature;
 use App\Keywords;
 use App\Ads;
 use App\Notes;
+use Illuminate\Support\Facades\Redis;
 
 class ProductsController extends Controller
 {
@@ -45,6 +46,45 @@ class ProductsController extends Controller
         }
         $product->save();
         return 'ok';
+    }
+
+    public function loadProductFromHotmart($id){
+        Redis::lpush("IDS_PRODUTOS",$id);
+        echo "<h3>Aguarde...</h3>";
+    }
+
+    public function setProductPendente(Request $request){
+        $data = $request->all();
+        if(!isset($data['error'])){
+            $p                  = new Product();
+            $p->idWebsite       = $data['id'];
+            $p->title           = $data['title'];
+            $p->imageLink       = $data['imageLink'];
+            $p->comission       = $data['price'];
+            $p->maxPrice        = $data['maxPrice'];
+            $p->about           = $data['about'];
+            $p->evaluation      = $data['evaluation'];
+            $p->format          = $data['format'];
+            $p->language        = $data['language'];
+            $p->accessMethod    = $data['accessMethod'];
+            $p->link            = $data['link'];
+            $p->cookie_duration = $data['cookie'];
+            $p->cookie_type     = $data['commission'];
+            $p->checkout        = $data['checkout'];
+            $p->pageProduct     = $data['pageProduct'];
+            $p->subject         = $data['subject'];
+            $p->pendente        = true;
+            if($data['maxPrice'] != 0){
+                $p->percentage = ($data['price']/$data['maxPrice'])*100;
+            }else{
+                $p->percentage = 0.0;
+            }
+            $p->save();
+        }else{
+            $p     = new Product();
+            $p->pendente = True;
+            $p->save();
+        }
     }
 
     public function applyFilters(Request $request)
@@ -528,17 +568,18 @@ class ProductsController extends Controller
     }
 
     public function orderByProducts($order){
+        $count = Product::count();
         if($order == 1){
             $queryProducts = Product::query();
             $queryProducts->orderBy("title","ASC");
             $products = $queryProducts->paginate(20);
-            return view('pages/listProducts',compact('products',$products));
         }else if ($order == 2){
             $queryProducts = Product::query();
             $queryProducts->orderBy("title","DESC");
             $products = $queryProducts->paginate(20);
-            return view('pages/listProducts',compact('products',$products));
         }
+        $data = ['count' => $count,'products' => $products];
+        return view('pages/listProducts')->with($data);
     }
 
     
@@ -548,6 +589,7 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     * 
      */
     public function update(Request $request, $id)
     {
@@ -703,9 +745,7 @@ class ProductsController extends Controller
         Product::where('id','=',$id)->delete();
         return redirect(route('listProducts'));
     }
-    public function countProducts(Request $request){
-
-        
+    public function countProducts(Request $request){ 
         $c = Product::where('subject','=','imais e Planta')->count();
         echo "Categoria: Animais e plantas| Excel: 1943| Extraidos: $c<br>";
         $c = Product::where('subject','=','Casa e Construçã')->count();
