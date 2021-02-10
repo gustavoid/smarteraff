@@ -26,13 +26,14 @@
                             </div>
                             <br>
                             <br>
+
                             <h5 class="card-title text-left">ID do produto</h5>
 							<div class="row">
                                 <div class="col-md-7">
                                     <div class="input-group">
                                         <input class="form-control" type="number" name="idProduto" id="idProduto">
                                         <span class="input-group-append">
-                                            <button type="button" class="btn btn-default"><i class="fas fa-arrow-circle-down"></i></button>
+                                            <button type="button" class="btn btn-default" name="load" id="load"><i class="fas fa-arrow-circle-down"></i></button>
                                         </span>
                                     </div>
                                 </div>
@@ -67,5 +68,7 @@
 			</div>
     </div>
 </div>
-	
+@push('scripts')
+    <script src="/assets/js/demo/newProductDialog.demo.js"></script>
+@endpush
 @endsection

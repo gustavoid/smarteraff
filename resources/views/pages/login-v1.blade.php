@@ -10,8 +10,8 @@
 			<!-- begin login-header -->
 			<div class="login-header">
 				<div class="brand">
-					<span class="logo"></span> <b>Color</b> Admin
-					<small>responsive bootstrap 4 admin template</small>
+					<span class="logo"></span> <b>Smarter</b> Aff
+					<!-- <small>responsive bootstrap 4 admin template</small> -->
 				</div>
 				<div class="icon">
 					<i class="fa fa-lock"></i>
@@ -22,15 +22,27 @@
 			<div class="login-body">
 				<!-- begin login-content -->
 				<div class="login-content">
-					<form action="index.html" method="GET" class="margin-bottom-0">
+					<form action="{{ route('login') }}" method="POST" class="margin-bottom-0">
+						@csrf
 						<div class="form-group m-b-20">
-							<input type="text" class="form-control form-control-lg inverse-mode" placeholder="Email Address" required />
+							<input id="email" type="email" name="email" class="form-control form-control-lg inverse-mode  @error('email') is-invalid @enderror" placeholder="Email Address"  value="{{ old('email') }}" required />
+								@error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
 						</div>
 						<div class="form-group m-b-20">
-							<input type="password" class="form-control form-control-lg inverse-mode" placeholder="Password" required />
+							<input type="password" class="form-control form-control-lg inverse-mode @error('password') is-invalid @enderror" name="password" placeholder="Password" required />
+							
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
 						</div>
 						<div class="checkbox checkbox-css m-b-20">
-							<input type="checkbox" id="remember_checkbox" /> 
+							<input type="checkbox" id="remember_checkbox" {{ old('remember') ? 'checked' : '' }}/> 
 							<label for="remember_checkbox">
 							Remember Me
 							</label>

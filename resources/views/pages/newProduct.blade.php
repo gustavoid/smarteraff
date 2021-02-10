@@ -26,11 +26,40 @@
         </div>
         <div class="row">
             <div class="col">
-                @if($product->title)
-                    <h1 class="page-header">{{ base64_decode($product->title) }}<i class="flag-icon flag-icon-us"></i> </h1> 
-                @else
-                    <h1 class="page-header">Titulo do produto<i class="flag-icon flag-icon-us"></i> </h1> 
-                @endif
+                @switch($product->language)
+                    @case('talian')
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-it"></i> </h1> 
+                        @break
+                    @case('Russ')
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-ru"></i> </h1> 
+                        @break
+                    @case('Português (Portugal)')
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-pt"></i> </h1> 
+                        @break
+                    @case('Português (Brasil)')
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-br"></i> </h1> 
+                        @break
+                    @case('Português (Brasil)')
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-br"></i> </h1> 
+                        @break
+                    @case('Alemã')
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-de"></i> </h1> 
+                        @break
+                    @case('Árabe')
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-sa"></i> </h1> 
+                        @break
+                    @case('Espanhol')
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-es"></i> </h1> 
+                        @break
+                    @case('Francês')
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-fr"></i> </h1> 
+                        @break
+                    @case('Japonês')
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-jp"></i> </h1> 
+                        @break
+                    @default
+                        <h1 class="page-header">{{ base64_decode($product->title) }} <i class="flag-icon flag-icon-us"></i> </h1> 
+                @endswitch
             </div>  
         </div>
 
@@ -39,7 +68,7 @@
 
 	            <div class="panel panel-inverse">
 	            	<div class="panel-heading">
-	            		<h4 class="panel-title">ID {{ $product->idWebsite }} | Hotmart <i class="fa fa-rocket" style="padding-left: 8px"></i></h4>
+	            		<h4 class="panel-title">ID {{ $product->idWebsite }} | Hotmart </h4>
 	            		<div class="panel-heading-btn">
 	            			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
 	            			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
@@ -56,9 +85,10 @@
                         </div>
 	            	<div class="panel-body">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-md-3" style="top: -60px">
                                 <div class="card border-0 text-white">
-	    			            	<img class="card-img" src="/assets/img/gallery/gallery-13.jpg" alt="Card image">
+                                        <img class="card-img" src="/assets/img/gallery/gallery-13.jpg" alt="Card image">
+                                    
 	    			            	<div class="card-img-overlay">
 	    			            	</div>
 	    			            </div>
@@ -74,7 +104,7 @@
                                     <!-- <div class="col"></div> -->
 
                     
-                                        <div class="col text-right"><h5> <strong style="color: #71a35b;">0%</strong>|<strong style="color: #c86060">0º</strong>|<strong style="color: #e4af7a">0</strong></h5></div>
+                                        <div class="col text-right"><h5> <strong style="color: #71a35b;">{{ $product->percentage }}%</strong>|<strong style="color: #c86060">{{ $temperature }}º</strong>|<strong style="color: #e4af7a">{{ $product->evaluation }}</strong></h5></div>
                                     
                                 </div>
 
@@ -683,12 +713,12 @@
                                     <div class="col">
                                         <label for="sobre">Sobre</label>
                                         @if($product->about)
-                                            <textarea class="form-control" id="sobre" name="sobre" rows="10"  value="{{ base64_decode($product->about) }}"></textarea>
+                                            <textarea class="form-control" id="sobre" name="sobre" rows="10"  >{{ base64_decode($product->about) }}</textarea>
                                         @else
                                             <textarea class="form-control" id="sobre" name="sobre" rows="10" ></textarea>
                                         @endif
                                         <br>
-                                        <button type="button" class="btn btn-inverse">Salvar</button>
+                                        <!-- <button type="button" class="btn btn-inverse">Salvar</button> -->
                                     </div>
                                 </div>
                             
@@ -777,10 +807,10 @@
                                 <div class="row">
                                     <div class="col">
                                         @switch($product->cookie_duration)
-                                        @case('infita')
+                                        @case('infinita')
                                             <select class="form-control" name="duracaoCookie" id="duracaoCookie">
-                                                <option>de 30 dias</option>
                                                 <option>infinita</option>
+                                                <option>de 30 dias</option>
                                                 <option>de 60 dias</option>
                                                 <option>de 90 dias</option>
                                                 <option>de 180 dias</option>
@@ -876,10 +906,10 @@
                                 <div class="row">
                                     <div class="col">
                                         <label for="notaProduto">Nota do produto</label>
-                                        @if($product->evaluate)
-                                            <input class="form-control form-control-lg" type="text" name="notaProduto" id="notaProduto" value="{{ $product->evaluate }}"/>
+                                        @if($product->evaluation)
+                                            <input class="form-control form-control-lg" type="text" name="notaProduto" id="notaProduto" value="{{ $product->evaluation }}"/>
                                         @else
-                                            <input class="form-control form-control-lg" type="text" name="notaProduto" id="notaProduto" value="{{ $product->evaluate }}"/>
+                                            <input class="form-control form-control-lg" type="text" name="notaProduto" id="notaProduto"/>
                                         @endif
                                     </div>
                                 </div>

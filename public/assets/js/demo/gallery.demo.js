@@ -6,7 +6,7 @@ Website: http://www.seantheme.com/color-admin/admin/
 */
 
 function calculateDivider() {
-	var dividerValue = 4;
+	var dividerValue = 3;
 	if ($(this).width() <= 576) {
 		dividerValue = 1;
 	} else if ($(this).width() <= 992) {

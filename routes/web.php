@@ -34,7 +34,7 @@ Route::get('/orderBy/{order}','ProductsController@orderByProducts')->name('order
 Route::get('/countproductsbysubject','ProductsController@countProducts')->name('countProducts');
 Route::get('/product/setfavorite/{id}','ProductsController@setFavorite')->name('setFavorite')->middleware('auth');
 Route::get('/product/setuniquename/{id}','ProductsController@setUniqueName')->name('setUniqueName')->middleware('auth');
-
+Route::get('/loadproduct/{id}','ProductsController@loadProductFromHotmart')->name('loadProduct')->middleware('auth');
 
 
 
@@ -142,7 +142,7 @@ Route::get('/extra/profile', 'MainController@extraProfile')->name('extra-profile
 Route::get('/extra/scrum-board', 'MainController@extraScrumBoard')->name('extra-scrum-board');
 Route::get('/extra/cookie-acceptance-banner', 'MainController@extraCookieAcceptanceBanner')->name('extra-cookie-acceptance-banner');
 
-Route::get('/login/v1', 'MainController@loginV1')->name('login-v1');
+// Route::get('/login/v1', 'MainController@loginV1')->name('login-v1');
 Route::get('/login/v2', 'MainController@loginV2')->name('login-v2');
 Route::get('/login/v3', 'MainController@loginV3')->name('login-v3');
 Route::get('/register/v3', 'MainController@registerV3')->name('register-v3');

@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/login/v1';
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -37,15 +37,18 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    public function showLoginForm(){
+        return view('pages/login-v2');
+    }
 
     public  function index(){
-        return view('pages/login-v1');
+        return view('pages/login-v2');
     }
 
     public function do(Request $request) {
         if (Auth::attempt(['email' => $request->get('username'), 'password' => $request->get('password')])) {
 			return redirect()->intended('/');
         }
-        return Redirect::to('login/v1');
+        return Redirect::to('login');
     }
 }

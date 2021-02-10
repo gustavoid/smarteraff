@@ -10,7 +10,7 @@ use App\Temperature;
 use App\Keywords;
 use App\Ads;
 use App\Notes;
-use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Http;
 
 class ProductsController extends Controller
 {
@@ -49,9 +49,38 @@ class ProductsController extends Controller
     }
 
     public function loadProductFromHotmart($id){
-        Redis::lpush("IDS_PRODUTOS",$id);
-        echo "<h3>Aguarde...</h3>";
+        $response = Http::timeout(60)->get('http://localhost:5000/api/v1/getProduct?id='.$id);
+        if($response->status() == 200){
+            $json = $response->json();
+            // dd($json["about"]);
+            if(isset($json["error"])){
+                echo "<h1>Produto nao encontrado</h1>";
+            }else{
+                $product  = new Product();
+                $product->idWebsite = $json["id"];
+                $product->about = $json["about"];
+                $product->accessMethod = $json["accessMethod"];
+                $product->checkout = $json["checkout"];
+                $product->cookie_type = $json["commission"];
+                $product->cookie_duration = $json["cookie"];
+                $product->evaluation = $json["evaluation"];
+                $product->format = $json["format"];
+                $product->imgLink = $json["imgLink"];
+                $product->language = $json["language"];
+                $product->link = $json["link"];
+                $product->maxPrice = $json["maxPrice"];
+                $product->pageProduct = $json["pageProduct"];
+                $product->percentage = $json["percentage"];
+                $product->price   = $json["price"];
+                $product->subject = $json["subject"];
+                $product->title   = $json["title"];
+                $temperature = $json["temperature"];
+                $data = ["product" => $product, "temperature" => $temperature];
+                return view('pages/newProduct')->with($data);
+            }
+        }
     }
+       
 
     public function setProductPendente(Request $request){
         $data = $request->all();
@@ -90,13 +119,15 @@ class ProductsController extends Controller
     public function applyFilters(Request $request)
     {   
         $queryProducts = Product::query();
-        $dataForm = $request->all();
+        $dataForm     = $request->all();
+        
         // Preço
         $priceValues = explode(";",$dataForm['priceValue']);
         $minValue    = floatval($priceValues[0]);
         $maxValue    = floatval($priceValues[1]);
         $queryProducts->whereBetween('maxPrice',[$minValue,$maxValue]);
-        //comissao
+        
+        // Comissao
         $comissionValues = explode(";",$dataForm['comissionValue']);
         $minValue        = floatval($comissionValues[0]);
         $maxValue        = floatval($comissionValues[1]);
@@ -117,6 +148,7 @@ class ProductsController extends Controller
         // Categorias
         if(isset($dataForm['animais_plantas'])){
             $queryProducts->where('subject','=','imais e Planta');
+            
         }
         if(isset($dataForm['casa_construcao'])){
             $queryProducts->where('subject','=','Casa e Construçã');

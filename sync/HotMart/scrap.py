@@ -380,7 +380,7 @@ def setCookies(driver,cookies):
 
 def disableFilter(driver):
     try:
-        WebDriverWait(driver, TIMEOUT_VALUE).until(EC.visibility_of_element_located((By.XPATH, "//a[@data-test-id='load-more']")))
+        # WebDriverWait(driver, TIMEOUT_VALUE).until(EC.visibility_of_element_located((By.XPATH, "//a[@data-test-id='load-more']")))
         backdropActive = driver.find_element_by_xpath("//div[@class='filters-backdrop active']")
         if backdropActive is not None:
             backdropActive.click()

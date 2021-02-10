@@ -1,5 +1,0 @@
-
-
-function btnHeart(){
-    alert("teste");
-}
